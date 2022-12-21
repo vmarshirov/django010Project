@@ -72,7 +72,13 @@ pip install -r requirements.txt
 
 python manage.py runserver 10.0.2.15:8000
 
-admin root root
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+admin rootgit 
+
 
 ------------
 
