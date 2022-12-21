@@ -64,6 +64,11 @@ https://python.land/virtual-environments/virtualenv
 
 ### Установка и запуск
 
+python manage.py startproject ProjectName
+
+django-admin startproject myproject
+
+python manage.py runserver
 
 
 ### Конфигурирование и запуск Django (после GitHub)
