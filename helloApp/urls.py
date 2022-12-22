@@ -17,5 +17,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="index")
+    path("", views.index, name="index"),
+    path("abc/", views.abc, name="abc"),
+    path("f_str/<str:str_value>", views.f_str, name="f_str"),
+    path("f_int/<int:int_value>", views.f_int, name="f_int"),
+    path("f_slug/<slug:slug_value>", views.f_slug, name="f_slug"),
+    path("f_path/<path:path_value>", views.f_path, name="f_path"),
 ]
