@@ -18,4 +18,6 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("greet/<str:name>", views.greet, name="renderApp-greet"),
+    path("page_01", views.page_01, name="renderApp-page_01"),
 ]
