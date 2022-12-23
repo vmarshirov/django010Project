@@ -16,8 +16,10 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+
+app_name = "renderApp"
 urlpatterns = [
     path("", views.index, name="index"),
     path("greet/<str:name>", views.greet, name="renderApp-greet"),
-    path("page_01", views.page_01, name="renderApp-page_01"),
+    path("page_01/", views.page_01, name="renderApp-page_01"),
 ]

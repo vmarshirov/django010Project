@@ -1,7 +1,13 @@
-{%  extends "renderApp/layout.html" %}
+{%  extends "../renderApp/layout.html" %}
+
+
+{% block title %}
+<title>page_01</title>
+{{request}}
+{% endblock %}
 
 
 {% block main %}
-<h3>Заголовок фрагмента</h3>
-<p>Содержание фрагмента</p>
+<h3>Page_010. Заголовок фрагмента</h3>
+<p>Page_01. Содержание фрагмента</p>
 {% endblock %}

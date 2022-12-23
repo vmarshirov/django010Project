@@ -10,6 +10,7 @@ from django.http import HttpResponse
 # http://127.0.0.1:8000/helloApp/f_str/abc
 # http://127.0.0.1:8000/helloApp/f_int/12345
 # http://127.0.0.1:8000/helloApp/f_slug/building-your-1st-django-site
+# http://127.0.0.1:8000/helloApp/f_path/12345
 
 def index(request):
     return HttpResponse("helloApp")
