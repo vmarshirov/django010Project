@@ -22,8 +22,8 @@ def greet(request, name):
     return render(request, "renderApp/greet.html", {"name": name})
 
 
-def page_01(request, qs):
+def page_01(request, queryStr):
     print(request)
-    print(qs)
+    print(queryStr)
 
-    return render(request, "renderApp/page_01.html", {"qs": qs})
+    return render(request, "renderApp/page_01.html", {"queryStr": queryStr})

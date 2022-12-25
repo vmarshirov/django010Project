@@ -1,14 +1,14 @@
 {%  extends "../renderApp/layout.html" %}
 
 
-{% block title %}
+{% block head %}
 <title>page_01</title>
 {% endblock %}
 
 
 {% block main %}
+<p>queryStr: {{queryStr}}</p>
 <h3>Page_010. Заголовок фрагмента</h3>
 <p>Page_01. Содержание фрагмента</p>
-<p>qs =  {{qs}}
 </p>
 {% endblock %}

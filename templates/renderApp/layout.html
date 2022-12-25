@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block title %}
+    {% block head %}
     {% endblock %}
 </head>
 <body>
@@ -10,7 +10,7 @@
 <nav>
     <ul>
         <li><a href="">./page_01</a></li>
-        <li><a href="{% url 'renderApp:renderApp-page_01' qs='abc' %}">renderApp:renderApp-page_01</a></li>
+        <li><a href="{% url 'renderApp:renderApp-page_01' queryStr='id/page/010' %}">renderApp:renderApp-page_01</a></li>
     </ul>
 </nav>
 
