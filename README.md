@@ -31,6 +31,9 @@ python3 -m venv env
 
 . env/bin/activate
 
+pip install --upgrade pip
+
+pip list
 
 python -m pip install Django
 
@@ -40,7 +43,7 @@ django-admin startproject myproject01
 
 ALLOWED_HOSTS = ["*"]
 
-py -m pip install Django
+python manage.py runserver 10.0.2.15:8000
 
 https://docs.djangoproject.com/en/4.1/intro/tutorial01/
 
@@ -52,9 +55,16 @@ python -m venv env
 
 env\Scripts\activate
 
-django-admin startproject ProjectName
+python -m pip install --upgrade pip 
 
 py -m pip install Django
+
+django-admin startproject ProjectName
+
+ALLOWED_HOSTS = ["*"]
+
+python manage.py runserver 10.0.2.15:8000
+
 
 https://docs.djangoproject.com/en/4.1/intro/tutorial01/
 
@@ -67,14 +77,13 @@ https://wiki.iphoster.net/wiki/Windows_10_-_%D0%BA%D0%B0%D0%BA_%D0%BF%D0%BE%D1%8
 https://python.land/virtual-environments/virtualenv
 
 
-### Установка и запуск
-
-django-admin startproject ProjectName
-
-python manage.py startproject ProjectName
+## AppName
 
 
-python manage.py runserver
+python manage.py -h
+
+python manage.py startapp AppName
+
 
 
 ### Конфигурирование и запуск Django (после GitHub)
