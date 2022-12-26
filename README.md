@@ -1,9 +1,6 @@
 ### su
 
-
-
 apt install python3-venv
-
 
 ### pip env
 
@@ -14,10 +11,10 @@ https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-e
 
 
 
-### django010Project
+## django010Project
 
-## для не Windows
-### env -  
+### для не Windows
+### env  
 
 su
 
@@ -49,7 +46,7 @@ https://docs.djangoproject.com/en/4.1/intro/tutorial01/
 
 deactivate
 
-### Для Windows env: 
+### Для Windows: 
 
 python -m venv env
 
@@ -79,15 +76,12 @@ https://python.land/virtual-environments/virtualenv
 
 ## AppName
 
-
 python manage.py -h
 
 python manage.py startapp AppName
 
 
-
 ### Конфигурирование и запуск Django (после GitHub)
-
 
 git clone https://github.com...
 
@@ -104,7 +98,7 @@ git remote add origin ...
 git pull origin main
 
 
-#### Окончательное конфигурирование и запуск
+### Окончательное конфигурирование и запуск
 
 cd django010Project
 
