@@ -103,9 +103,22 @@ git remote add origin ...
 
 git pull origin main
 
+
+#### Окончательное конфигурирование и запуск
+
+cd django010Project
+
+python3 -m venv env
+
+. env/bin/activate
+
+pip install --upgrade pip
+
 pip install -r requirements.txt
 
-python manage.py runserver 10.0.2.15:8000
+vim django010Project/settings.py
+
+python manage.py runserver 185.46.9.94:8000
 
 python manage.py migrate
 
@@ -113,16 +126,11 @@ python manage.py createsuperuser
 
 admin root
 
-------------
 
 ### Редирект порта для сервера
 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8000
 
--------------=
+### Готовим новую конфигурацию 
 
 pip freeze > requirements.txt
-
-
---------------------
-
 
