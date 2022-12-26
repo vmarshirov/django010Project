@@ -1,23 +1,11 @@
-### django010Project
+### su
 
 
-### git
 
-git clone https://github.com...
+apt install python3-venv
 
-cd ... 
 
-или
-
-mkdir ....
-
-git init
-
-git remote add origin ...
-
-git pull origin main
-
-## pip env
+### pip env
 
 
 https://pip.pypa.io/en/stable/
@@ -25,9 +13,15 @@ https://pip.pypa.io/en/stable/
 https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
 
 
-### env - для не Windows 
+
+### django010Project
+
+## для не Windows
+### env -  
 
 su
+
+apt-get update
 
 apt install python3 -venv
 
@@ -36,6 +30,15 @@ exit
 python3 -m venv env
 
 . env/bin/activate
+
+
+python -m pip install Django
+
+pip install -U django==8.0.4
+
+django-admin startproject myproject01
+
+ALLOWED_HOSTS = ["*"]
 
 py -m pip install Django
 
@@ -48,6 +51,8 @@ deactivate
 python -m venv env
 
 env\Scripts\activate
+
+django-admin startproject ProjectName
 
 py -m pip install Django
 
@@ -64,26 +69,40 @@ https://python.land/virtual-environments/virtualenv
 
 ### Установка и запуск
 
+django-admin startproject ProjectName
+
 python manage.py startproject ProjectName
 
-django-admin startproject myproject
 
 python manage.py runserver
 
 
 ### Конфигурирование и запуск Django (после GitHub)
 
+
+git clone https://github.com...
+
+cd ... 
+
+или
+
+mkdir ....
+
+git init
+
+git remote add origin ...
+
+git pull origin main
+
 pip install -r requirements.txt
 
 python manage.py runserver 10.0.2.15:8000
-
 
 python manage.py migrate
 
 python manage.py createsuperuser
 
 admin root
-
 
 ------------
 
