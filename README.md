@@ -24,6 +24,10 @@ apt install python3 -venv
 
 exit
 
+cd
+
+mkdir project01
+
 python3 -m venv env
 
 . env/bin/activate
@@ -36,7 +40,13 @@ python -m pip install Django
 
 pip install -U django==8.0.4
 
-django-admin startproject myproject01
+cd ../
+
+django-admin startproject project01 project01
+
+cd project01
+
+vim /settings.py
 
 ALLOWED_HOSTS = ["*"]
 
