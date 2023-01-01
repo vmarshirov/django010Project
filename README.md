@@ -28,6 +28,8 @@ cd
 
 mkdir project01
 
+cd project01
+
 python3 -m venv env
 
 . env/bin/activate
@@ -46,7 +48,7 @@ django-admin startproject project01 project01
 
 cd project01
 
-vim /settings.py
+vim project01/settings.py
 
 ALLOWED_HOSTS = ["*"]
 
