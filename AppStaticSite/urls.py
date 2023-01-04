@@ -17,9 +17,9 @@ from django.urls import path
 from . import views
 
 
-app_name = "renderApp"
+app_name = "AppStaticSite"
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("greet/<str:name>", views.greet, name="renderApp-greet"),
-    path("page_01/<path:queryStr>", views.page_01, name="renderApp-page_01"),
+    path("", views.index, name="AppStaticSite"),
+    path("form", views.form, name="AppStaticSite-form"),
+    # path("page_01/<path:queryStr>", views.page_01, name="AppStaticSite-page_01"),
 ]
