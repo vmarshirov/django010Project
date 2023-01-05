@@ -19,7 +19,10 @@ from . import views
 
 app_name = "AppStaticSite"
 urlpatterns = [
-    path("", views.index, name="AppStaticSite"),
+    path("index", views.index),
+    path("", views.home),
+    path("home", views.home, name="AppStaticSite-home"),
     path("form", views.form, name="AppStaticSite-form"),
+    path("form_abc", views.form_abc, name="AppStaticSite-form_abc"),
     # path("page_01/<path:queryStr>", views.page_01, name="AppStaticSite-page_01"),
 ]
