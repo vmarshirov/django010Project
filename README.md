@@ -72,7 +72,7 @@ python -m pip install --upgrade pip
 
 py -m pip install Django
 
-django-admin startproject ProjectName
+django-admin startproject ProjectName ../ProjectName
 
 ALLOWED_HOSTS = ["*"]
 
