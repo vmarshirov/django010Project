@@ -14,22 +14,22 @@ def def_path_element(request):
 
 def index(request):
     path_element = def_path_element(request)
-    return render(request, "AppStaticSite/index.html", {"path_element": path_element})
+    return render(request, "AppStaticSite/index.html", context={"path_element": path_element})
 
 
 def home(request):
     path_element = def_path_element(request)
-    return render(request, "AppStaticSite/home.html", {"path_element": path_element})
+    return render(request, "AppStaticSite/home.html", context={"path_element": path_element})
 
 
 def form(request):
     path_element = def_path_element(request)
-    return render(request, "AppStaticSite/form.html", {"path_element": path_element})
+    return render(request, "AppStaticSite/form.html", context={"path_element": path_element})
 
 
 def form_abc(request):
     path_element = def_path_element(request)
-    return render(request, "AppStaticSite/form_abc.html", {"path_element": path_element})
+    return render(request, "AppStaticSite/form_abc.html", context={"path_element": path_element})
 
 #
 # def f_str(request, str_value):
