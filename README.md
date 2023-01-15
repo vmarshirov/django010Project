@@ -74,6 +74,8 @@ env\Scripts\activate
 
 https://medium.com/@ph1l74/python-venv-%D0%BD%D0%B0-windows-10-2118ad685b1 
 
+Отрываем powershell от имени администратора: Set-ExecutionPolicy 
+
 https://python.land/virtual-environments/virtualenv
 
 python -m pip install --upgrade pip 
