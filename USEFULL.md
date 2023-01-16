@@ -7,7 +7,11 @@ manage.py: Change os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oldprojectnam
 
 newprojectname/wsgi.py: Change os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oldprojectname.settings')
 
-newprojectname/settings.py: Change ROOT_URLCONF = 'oldprojectname.urls' and change WSGI_APPLICATION = 'oldprojectname.wsgi.application'
+newprojectname/settings.py: Change 
+
+ROOT_URLCONF = 'oldprojectname.urls' and change 
+
+WSGI_APPLICATION = 'oldprojectname.wsgi.application'
 
 newprojectname/urls.py: Change oldprojectname in a line I had added
 
