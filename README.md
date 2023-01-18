@@ -1,3 +1,5 @@
+### !!! utf-8
+
 ### su
 
 apt install python3-venv
