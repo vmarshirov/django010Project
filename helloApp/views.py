@@ -1,14 +1,8 @@
 from django.http import HttpResponse
 import datetime
 
-
-# from django.shortcuts import render
-
-# Create your views here.
-
 # https://docs.djangoproject.com/en/4.1/topics/http/urls/
 # https://docs.djangoproject.com/en/4.1/topics/http/views/
-
 
 
 def index(request):  # http://127.0.0.1:8000/helloApp/
@@ -52,3 +46,8 @@ def f_path(request, path_value): # http://127.0.0.1:8000/helloApp/f_path/buildin
     elements_amount = path_elements.__len__()
     path_element = path_elements[elements_amount - 1]
     return HttpResponse(f"path_element: {path_element}")
+
+# Заметки на будущее
+# Передать несколько переменых и произвести вычисления
+# Передать несколько символов,  сформировать словарь и произвести манипуляции со словарем используя возможности Python
+
