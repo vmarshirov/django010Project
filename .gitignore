@@ -5,6 +5,7 @@
 /.cache/*
 .viminfo
 .bash_history
+.swp
 id_rsa
 id_rsa.pub
 /__pycache__/*
