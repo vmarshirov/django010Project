@@ -1,11 +1,8 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 
 
-# http://127.0.0.1:8000/renderApp/
-# http://127.0.0.1:8000/renderApp/greet/Иванов
-# http://127.0.0.1:8000/renderApp/page_01
+
 
 
 # Create your views here.
@@ -14,16 +11,16 @@ from django.shortcuts import render
 #     return HttpResponse('renderApp')
 
 
-def index(request):
+def index(request): # http://127.0.0.1:8000/renderApp/
     return render(request, "renderApp/index.html")
 
 
-def greet(request, name):
+def greet(request, name): # http://127.0.0.1:8000/renderApp/greet/Иванов
     return render(request, "renderApp/greet.html", {"name": name})
 
 
-def page_01(request, queryStr):
+def page_01(request, query_str): # http://127.0.0.1:8000/renderApp/page_01
     print(request)
-    print(queryStr)
+    print(query_str)
 
-    return render(request, "renderApp/page_01.html", {"queryStr": queryStr})
+    return render(request, "renderApp/page_01.html", {"queryStr": query_str})
