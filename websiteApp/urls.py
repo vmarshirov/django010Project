@@ -17,12 +17,12 @@ from django.urls import path
 from . import views
 
 
-app_name = "AppStaticSite"
+app_name = "websiteApp"
 urlpatterns = [
     path("index", views.index),
     path("", views.home),
-    path("home", views.home, name="AppStaticSite-home"),
-    path("form", views.form, name="AppStaticSite-form"),
-    path("form_abc", views.form_abc, name="AppStaticSite-form_abc"),
-    # path("page_01/<path:queryStr>", views.page_01, name="AppStaticSite-page_01"),
+    path("home", views.home, name="websiteApp-home"),
+    path("form", views.form, name="websiteApp-form"),
+    path("form_abc", views.form_abc, name="websiteApp-form_abc"),
+    # path("page_01/<path:queryStr>", views.page_01, name="websiteApp-page_01"),
 ]
