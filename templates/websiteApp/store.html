@@ -1,0 +1,72 @@
+{% extends "../websiteApp/layout.html" %}
+
+
+{% block title %}
+    <title>Store</title>
+{% endblock %}
+
+
+{% block main %}
+    {% load static %}
+    <div id="pk">{{ path_element.path_element }}</div>
+    <h5 class="card-title text-center">Магазин</h5>
+
+{#    path_element: {{path_element.path_element}}#}
+{#    <br>objects_array: {{objects_array.objects_array}}#}
+
+    <div class="card">
+        <div class="card-body">
+            <ul class="d-flex flex-row flex-wrap bg-light">
+                {% for object in objects_array.objects_array %}
+                    <li class="m-2 list-group-item">
+                        <img src="{% static object.img %}" width="200px>">
+                        <img src="{{ object.img }}" width="200px>">
+                        <h6>{{ object.title }}</h6>
+                        <p>{{ object.descriptin }}
+                            Цена: {{ object.price }}р.</p>
+                        <p>Артикул: {{ object.vendor_code }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+{% comment %}
+<ul>
+    {% for object in objects_array %}
+        <li>
+            {% for key, value in object.items %}
+                {{ key }}: {{ value }}
+                {{ value }}
+            {% endfor %}
+        </li>
+    {% endfor %}
+</ul>
+{% endcomment %}
+
+
+{% comment %}
+
+        <li class="m-2 list-group-item">
+        <img src=${content[key].img} width="200px">
+        <h6>${content[key].title}</h6>
+        <p>${content[key].description}. Цена
+        ${content[key].price} р.</p>
+        <p>Заказать
+        <input type="hidden" name= "vendor_code" value=${content[key].vendor_code}>
+        <input type="number" name="amount" value="0" style="width: 2.0rem;">
+        </p>
+        </li>
+
+{% endcomment %}
+
+
+</body>
+</html>
