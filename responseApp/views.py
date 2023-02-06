@@ -7,7 +7,7 @@ import datetime
 
 
 def index(request):  # http://127.0.0.1:8000/responseApp/
-        return HttpResponse("")
+    return HttpResponse("responseApp_index")
 
 
 def html(request):  # http://127.0.0.1:8000/responseApp/html/
@@ -29,19 +29,21 @@ def f_int(request, int_value):  # http://127.0.0.1:8000/responseApp/f_int/12345
     return HttpResponse(f"f_int, int_value: {int_value} ")
 
 
-
-def f_slug(request, slug_value):# http://127.0.0.1:8000/responseApp/f_slug/building-your_1st-django-site
+def f_slug(request, slug_value):  # http://127.0.0.1:8000/responseApp/f_slug/building-your_1st-django-site
     print(type(slug_value), slug_value)
     return HttpResponse(f"f_slug, slug_value: {slug_value}")
 
 
-def f_str_int_slug(request, str_value, int_value, slug_value):# http://127.0.0.1:8000/responseApp/f_str_int_slug/x=1&y=2/123/1st-django-site
+def f_str_int_slug(request, str_value, int_value,
+                   slug_value):  # http://127.0.0.1:8000/responseApp/f_str_int_slug/x=1&y=2/123/1st-django-site
     print(type(str_value), str_value)
     print(type(int_value), int_value)
     print(type(slug_value), slug_value)
-    return HttpResponse(f"f_str, str_value: {str_value} <br>f_int, f_int: {slug_value} <br>f_slug, slug_value: {slug_value}")
+    return HttpResponse(
+        f"f_str, str_value: {str_value} <br>f_int, f_int: {slug_value} <br>f_slug, slug_value: {slug_value}")
 
-def f_path(request, path_value): # http://127.0.0.1:8000/responseApp/f_path/building/your-1st/django-site
+
+def f_path(request, path_value):  # http://127.0.0.1:8000/responseApp/f_path/building/your-1st/django-site
     print("path_value: ", path_value)
     path_elements = path_value.split("/")
     print(path_elements)
@@ -53,7 +55,7 @@ def f_path(request, path_value): # http://127.0.0.1:8000/responseApp/f_path/buil
     print('request_path_elements:', request_path_elements)
     request_elements_amount = request_path_elements.__len__()
     print(request_elements_amount)
-    last_request_path_element = request_path_elements[request_elements_amount - path_elements_amount -1]
+    last_request_path_element = request_path_elements[request_elements_amount - path_elements_amount - 1]
     print(last_request_path_element)
     return HttpResponse(f"last_request_path_element: {last_request_path_element}")
 
@@ -65,7 +67,9 @@ def f_path(request, path_value): # http://127.0.0.1:8000/responseApp/f_path/buil
 # -по названию знака (sign) вывести его описание
 # -по порядковому номеру месяца вывести знак и описание
 # signs[sign_of_zodiac.lower()], l = list(signs.values())
+# if sign in signs:
+# else:
 
 
-# Arias of rectangle, square, circle
+# Arias of square, circle, rectangle
 # math.pi ()
