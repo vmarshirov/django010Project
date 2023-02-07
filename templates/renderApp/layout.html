@@ -8,14 +8,15 @@
 </head>
 <body>
 
-{% include '../renderApp/navigation.html' %}
-
 <nav>
     <ul>
         <li><a href="">./page_01</a></li>
-        <li><a href="{% url 'renderApp:renderApp-page_01' query_str='id/page/010' %}">renderApp:renderApp-page_01__query_str='id/page/010'</a></li>
+        <li><a href="{% url 'renderApp:renderApp-page_01' path_value='id/page/010' %}">renderApp:renderApp-page_01__query_str='id/page/010'</a></li>
     </ul>
 </nav>
+
+
+{% include '../renderApp/navigation.html' %}
 
 
 {% block main %}

@@ -12,9 +12,16 @@ def index(request): # http://127.0.0.1:8000/renderApp/
 def greet(request, name): # http://127.0.0.1:8000/renderApp/greet/Иванов
     return render(request, "renderApp/greet.html", {"name": name})
 
-def page_01(request, query_str): # http://127.0.0.1:8000/renderApp/page_01/id/page/010
-    print(request)
-    print(query_str)
-    context = {"query_str": query_str}
+def page_01(request, path_value): # http://127.0.0.1:8000/renderApp/page_01/id/page/010
+    print(path_value)
+    print(request.path)
+    context = {"path_value": path_value}
     return render(request, "renderApp/page_01.html",context)
-    # return render(request, "renderApp/page_01.html", {"query_str": query_str})
+
+def page_02(request, path_value): # http://127.0.0.1:8000/renderApp/page_02/id/page/020
+    print(path_value)
+    print(request.path)
+    context = {"path_value": path_value}
+    return render(request, "renderApp/page_02.html",context)
+
+
