@@ -9,8 +9,8 @@ def index(request): # http://127.0.0.1:8000/renderApp/
     return render(request, "renderApp/index.html")
 
 
-def greet(request, name): # http://127.0.0.1:8000/renderApp/greet/Иванов
-    return render(request, "renderApp/greet.html", {"name": name})
+def greet(request, value): # http://127.0.0.1:8000/renderApp/greet/Иванов
+    return render(request, "renderApp/greet.html", {"key": value})
 
 def page_01(request, path_value): # http://127.0.0.1:8000/renderApp/page_01/id/page/010
     print(path_value)
