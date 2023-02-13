@@ -23,4 +23,5 @@ urlpatterns = [
     path("greet/<str:value>", views.greet, name="renderApp-greet"),
     path("page_01/<path:path_value>", views.page_01, name="renderApp-page_01"),
     path("page_02/<path:path_value>", views.page_02, name="renderApp-page_02"),
+    path("pages/<path:path_value>", views.pages, name="pages"),
 ]

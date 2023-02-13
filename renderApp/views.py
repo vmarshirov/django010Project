@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # https://docs.djangoproject.com/en/4.1/topics/templates/
 # https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#id3
@@ -23,5 +23,13 @@ def page_02(request, path_value): # http://127.0.0.1:8000/renderApp/page_02/id/p
     print(request.path)
     context = {"path_value": path_value}
     return render(request, "renderApp/page_02.html",context)
+
+def pages(request, path_value): # http://127.0.0.1:8000/renderApp/pages/01
+    print(path_value)
+    print(request.path)
+    context = {"path_value": path_value}
+    if path_value == "first":  return render(request, "renderApp/page_01.html",context)
+    elif path_value == "second":  return render(request, "renderApp/page_02.html",context)
+    else: return redirect("renderApp:index")
 
 
