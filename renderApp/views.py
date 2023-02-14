@@ -31,5 +31,6 @@ def pages(request, path_value): # http://127.0.0.1:8000/renderApp/pages/01
     if path_value == "first":  return render(request, "renderApp/page_01.html",context)
     elif path_value == "second":  return render(request, "renderApp/page_02.html",context)
     else: return redirect("renderApp:index")
+    # else: return redirect("renderApp:renderApp-page_01", path_value)
 
 

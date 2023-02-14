@@ -1,38 +1,34 @@
 from django.shortcuts import render
 
 
-def def_path_element(request):
-    path_elements = request.path.split("/")
-    print("path_elements: ", path_elements)
-    elements_amount = path_elements.__len__()
-    print("elements_amount: ", elements_amount)
-    path_element = path_elements[elements_amount - 1]
-    print("path_element: ", path_element)
-    return ({"path_element": path_element})
+def def_url_elements(request):
+    url_elements_list = request.path.split("/")
+    print("last_url_element: ", url_elements_list[-1])
+    return ({"last_url_element": url_elements_list[-1]})
 
 
 def index(request):
-    path_element = def_path_element(request)
-    return render(request, "websiteApp/index.html", path_element)
+    last_url_element = def_url_elements(request)
+    return render(request, "websiteApp/index.html", last_url_element)
 
 
 def home(request):
-    path_element = def_path_element(request)
-    return render(request, "websiteApp/home.html", path_element)
+    last_url_element = def_url_elements(request)
+    return render(request, "websiteApp/home.html", last_url_element)
 
 
 def form(request):
-    path_element = def_path_element(request)
-    return render(request, "websiteApp/form.html", path_element)
+    last_url_element = def_url_elements(request)
+    return render(request, "websiteApp/form.html", last_url_element)
 
 
 def form_abc(request):
-    path_element = def_path_element(request)
-    return render(request, "websiteApp/form_abc.html", path_element)
+    last_url_element = def_url_elements(request)
+    return render(request, "websiteApp/form_abc.html", last_url_element)
 
 
 def store(request):
-    path_element = def_path_element(request)
+    last_url_element = def_url_elements(request)
     objects_array = [
         {
             "id": "1",
@@ -64,10 +60,10 @@ def store(request):
             "vendor_code": "VC444",
             "description": "Описание 4",
             "price": 400,
-            "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_003.jpg"
+            "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_004.jpg"
         }
     ]
-    objects_array ={'objects_array': objects_array}
-    content = {'path_element': path_element,'objects_array': objects_array}
+    dict_of_array = {'objects_array': objects_array}
+    content = {'urls': last_url_element, 'dict_of_array': dict_of_array}
     print(content)
     return render(request, "websiteApp/store.html", content)

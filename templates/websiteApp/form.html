@@ -7,31 +7,31 @@
 
 
 {% block main %}
-            <div id="pk">{{ path_element }}</div>
-            <h5 class="card-title text-center">Форма</h5>
-            <form action="https://yandex.ru/search/" method='get' target='_blank'>
-                <div class="mb-3">
-                    <label class="form-label" for="exampleSecondName">Фамилия</label>
-                    <input aria-describedby="secondNameHelp" class="form-control" id="secondName" type="text" name="text"
-                           value="Иванов">
-                    <div class="form-text" id="secondName">Введите с прописной буквы</div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="exampleInputEmail1">Email address</label>
-                    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" type="email" name="email"
-                           value="name@ya.ru">
-                    <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="exampleInputPassword1">Password</label>
-                    <input class="form-control" id="exampleInputPassword1" type="password" name="password" value="123">
-                </div>
-                <div class="mb-3 form-check">
-                    <input class="form-check-input" id="exampleCheck1" type="checkbox" name="checkbox">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button class="btn btn-primary" type="submit">Submit</button>
-              </form>
+    <div id="pk">{{ last_url_element }}</div>
+    <h5 class="card-title text-center">Форма</h5>
+    <form action="https://yandex.ru/search/" method='get' target='_blank'>
+        <div class="mb-3">
+            <label class="form-label" for="exampleSecondName">Фамилия</label>
+            <input aria-describedby="secondNameHelp" class="form-control" id="secondName" type="text" name="text"
+                   value="Иванов">
+            <div class="form-text" id="secondName">Введите с прописной буквы</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="exampleInputEmail1">Email address</label>
+            <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" type="email" name="email"
+                   value="name@ya.ru">
+            <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="exampleInputPassword1">Password</label>
+            <input class="form-control" id="exampleInputPassword1" type="password" name="password" value="123">
+        </div>
+        <div class="mb-3 form-check">
+            <input class="form-check-input" id="exampleCheck1" type="checkbox" name="checkbox">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
 {% endblock %}
 
 
