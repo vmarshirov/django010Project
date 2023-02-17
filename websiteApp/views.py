@@ -3,8 +3,9 @@ from django.shortcuts import render
 
 def def_url_elements(request):
     url_elements_list = request.path.split("/")
-    print("last_url_element: ", url_elements_list[-1])
-    return ({"last_url_element": url_elements_list[-1]})
+    print("url_elements_list: ", url_elements_list)
+    print("last_url_element: ", url_elements_list[-2])
+    return ({"last_url_element": url_elements_list[-2]})
 
 
 def index(request):

@@ -7,7 +7,7 @@ import datetime
 
 
 def index(request):  # http://127.0.0.1:8000/responseApp/
-    return HttpResponse("responseApp_index")
+    return HttpResponse("responseApp")
 
 
 def html(request):  # http://127.0.0.1:8000/responseApp/html/
