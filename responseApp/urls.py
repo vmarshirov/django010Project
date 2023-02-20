@@ -16,6 +16,7 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+app_name = "responseApp"
 urlpatterns = [
     path("", views.index),
     path("html/", views.html),

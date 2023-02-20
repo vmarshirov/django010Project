@@ -27,7 +27,6 @@ def form_abc(request):
     last_url_element = def_url_elements(request)
     return render(request, "websiteApp/form_abc.html", last_url_element)
 
-
 def store(request):
     last_url_element = def_url_elements(request)
     objects_array = [
@@ -65,6 +64,23 @@ def store(request):
         }
     ]
     dict_of_array = {'objects_array': objects_array}
-    content = {'urls': last_url_element, 'dict_of_array': dict_of_array}
+    content = {'urls': last_url_element,
+               'dict_of_array': dict_of_array}
     print(content)
     return render(request, "websiteApp/store.html", content)
+
+def store_result(request): # http://127.0.0.1:8000/renderApp/greet/Иванов
+    print(request.__dir__())
+    req = dict(request.GET)
+    print (req)
+    vendor_code = req.get("vendor_code")
+    amount = req.get("amount")
+    print(vendor_code, amount)
+    i=0
+    d = {}
+    for key in vendor_code:
+        print(vendor_code[i], amount[i])
+        d[vendor_code[i]] = amount[i]
+        i+=1
+    print(d)
+    return render(request, "websiteApp/store_result.html", {'d':d})

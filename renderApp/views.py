@@ -10,6 +10,8 @@ def index(request): # http://127.0.0.1:8000/renderApp/
 
 
 def greet(request, value): # http://127.0.0.1:8000/renderApp/greet/Иванов
+    print(request.__dir__())
+    print(request.GET)
     return render(request, "renderApp/greet.html", {"key": value})
 
 def page_01(request, path_value): # http://127.0.0.1:8000/renderApp/page_01/id/page/010

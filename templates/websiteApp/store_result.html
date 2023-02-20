@@ -1,0 +1,57 @@
+{% extends "../websiteApp/layout.html" %}
+
+
+{% block title %}
+    <title>Store</title>
+{% endblock %}
+
+
+{% block main %}
+    {% load static %}
+    <div id="pk" name={{ urls.last_url_element }}>{{ urls.last_url_element }}</div>
+    <h5 class="card-title text-center">Магазин Результаты</h5>
+    {#    path_element: {{path_element.path_element}}#}
+    {#    <br>objects_array: {{objects_array.objects_array}}#}
+
+    <div class="card">
+        <div class="card-body">
+            {{ d }}
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+{% comment %}
+<ul>
+    {% for object in objects_array %}
+        <li>
+            {% for key, value in object.items %}
+                {{ key }}: {{ value }}
+                {{ value }}
+            {% endfor %}
+        </li>
+    {% endfor %}
+</ul>
+{% endcomment %}
+
+
+{% comment %}
+
+        <li class="m-2 list-group-item">
+        <img src=${content[key].img} width="200px">
+        <h6>${content[key].title}</h6>
+        <p>${content[key].description}. Цена
+        ${content[key].price} р.</p>
+        <p>Заказать
+        <input type="hidden" name= "vendor_code" value=${content[key].vendor_code}>
+        <input type="number" name="amount" value="0" style="width: 2.0rem;">
+        </p>
+        </li>
+
+{% endcomment %}
+
+
+</body>
+</html>
