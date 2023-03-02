@@ -1,0 +1,12 @@
+.bg-color {
+    background-color: red
+}
+
+label{
+    display: table-row;
+    line-height: 2.0rem;
+}
+
+input {
+    width: fit-content;
+}
