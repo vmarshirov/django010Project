@@ -14,7 +14,7 @@ def index(request):
 
 
 def home(request):
-    last_url_element = def_url_elements(request)
+    last_url_element = {"last_url_element": 'home'}
     return render(request, "websiteApp/home.html", last_url_element)
 
 
