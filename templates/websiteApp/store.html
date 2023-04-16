@@ -16,11 +16,11 @@
     <div class="card">
         <div class="card-body">
 {#            <form action="https://www.bing.com/search" id="UserEnter" name="UserEnter" target="_blank">#}
-            <form action="{% url 'websiteApp:websiteApp-store_result' %}" id="UserEnter" name="UserEnter" target="_blank">
+            <form action="{% url 'websiteApp:store_result' %}" id="UserEnter" name="UserEnter" target="_blank">
                 <ul class="d-flex flex-row flex-wrap ">
                     {% for object in dict_of_array.objects_array %}
                         <li class="m-2 list-group-item bg-light border p-3">
-                            <img src="{% static object.img %}" width="200px>">
+                                <img src="{% static object.img %}" width="200px>">
                             <img src="{{ object.img }}" width="200px>">
                             <h6>{{ object.title }}</h6>
                             <p>{{ object.description }}. Цена: {{ object.price }}р.

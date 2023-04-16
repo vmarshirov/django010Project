@@ -1,8 +1,17 @@
+            {#Обратное связывание#}
             <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item"><a id="home" class="nav-link" href="{% url 'websiteApp:websiteApp-home' %}">Домашняя</a></li>
-                <li class="nav-item"><a id="form" class="nav-link" href="{% url 'websiteApp:websiteApp-form' %}">Форма</a></li>
-                <li class="nav-item"><a id="form_abc" class="nav-link" href="{% url 'websiteApp:websiteApp-form_abc' %}">Оцениваем ABC</a>
-                <li class="nav-item"><a id="store" class="nav-link" href="{% url 'websiteApp:websiteApp-store' %}">Магазин</a>
+                <li class="nav-item"><a id="home" class="nav-link" href="{% url 'websiteApp:home' %}">Домашняя</a></li>
+                <li class="nav-item"><a id="form" class="nav-link" href="{% url 'websiteApp:form' %}">Форма</a></li>
+                <li class="nav-item"><a id="form_create" class="nav-link" href="{% url 'websiteApp:form_create' %}">Форма.CreateGet</a>
+                <li class="nav-item"><a id="form_abc" class="nav-link" href="{% url 'websiteApp:form_abc' %}">Оцениваем ABC</a>
+                <li class="nav-item"><a id="store" class="nav-link" href="{% url 'websiteApp:store' %}">Магазин</a>
                 </li>
             </ul>
-            {#Обратное связывание#}
+
+{#            <ul class="nav nav-tabs card-header-tabs">#}
+{#                <li class="nav-item"><a class="{% if last_url_element == 'home' %} nav-link active {% else %} nav-link {% endif %} " href="{% url 'websiteApp:home' %}">Домашняя</a></li>#}
+{#                <li class="nav-item"><a class="{% if last_url_element == 'form' %} nav-link active {% else %} nav-link {% endif %} " href="{% url 'websiteApp:form' %}">Форма</a></li>#}
+{#                <li class="nav-item"><a class="{% if last_url_element == 'form_create' %} nav-link active {% else %} nav-link {% endif %} " href="{% url 'websiteApp:form_create' %}">Форма.CreateGet</a></li>#}
+{#                <li class="nav-item"><a class="{% if last_url_element == 'form_abc' %} nav-link active {% else %} nav-link {% endif %} " href="{% url 'websiteApp:form_abc' %}">Оцениваем ABC</a></li>#}
+{#                <li class="nav-item"><a class="{% if last_url_element == 'store' %} nav-link active {% else %} nav-link {% endif %} " href="{% url 'websiteApp:store' %}">Магазин</a></li>#}
+{#            </ul>#}

@@ -21,10 +21,13 @@ app_name = "websiteApp"
 urlpatterns = [
     path("index/", views.index),
     path("", views.home),
-    path("home/", views.home, name="websiteApp-home"),
-    path("form/", views.form, name="websiteApp-form"),
-    path("form_abc/", views.form_abc, name="websiteApp-form_abc"),
-    path("store/", views.store, name="websiteApp-store"),
-    path("store_result/", views.store_result, name="websiteApp-store_result"),
+    path("home/", views.home, name="home"),
+    path("form/", views.form, name="form"),
+    path("form_create/", views.form_create, name="form_create"),
+    path("form_get/", views.form_get, name="form_get"),
+    path("form_get_all/", views.form_get_all),
+    path("form_abc/", views.form_abc, name="form_abc"),
+    path("store/", views.store, name="store"),
+    path("store_result/", views.store_result, name="store_result"),
     # path("page_01/<path:queryStr>", views.page_01, name="websiteApp-page_01"),
 ]

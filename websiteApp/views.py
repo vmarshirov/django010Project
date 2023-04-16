@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django import forms
+from django.http import HttpResponse
 
 
 def def_url_elements(request):
@@ -21,6 +23,49 @@ def home(request):
 def form(request):
     last_url_element = def_url_elements(request)
     return render(request, "websiteApp/form.html", last_url_element)
+
+
+
+class AbcFormCreate(forms.Form):
+    a = forms.IntegerField(initial=1, min_value=2)
+    b = forms.IntegerField(required=False)
+    c = forms.IntegerField(label='c_lable' )
+
+def form_create(request):
+    last_url_element = def_url_elements(request)
+    abc_form = AbcFormCreate()
+    print(abc_form)
+    context = {'last_url_element': last_url_element,
+               'abc_form': abc_form}
+    return render(request, 'websiteApp/form_create.html', context)
+
+def form_get(request):
+    print(request.GET)
+    print(request.GET.get("a"))
+    print(request.GET.get("b"))
+    print(request.GET.get("c"))
+    a = request.GET.get("a")
+    b = request.GET.get("b")
+    c = request.GET.get("c")
+    abc_obj={"a":a, "b":b, "c":c}
+    return HttpResponse(f"""
+    <pre>
+    a = {a}
+    b = {b}
+    c = {c}
+    abc_obj = {abc_obj}
+    a_abc_obj = {abc_obj['a']}
+    </pre>
+    """)
+
+def form_get_all(request):
+    print(request.GET)
+    r = list(request.GET.values())
+    return HttpResponse(f"""
+    <pre> См. терминал 
+    {r}
+    </pre>
+    """)
 
 
 def form_abc(request):
@@ -64,10 +109,10 @@ def store(request):
         }
     ]
     dict_of_array = {'objects_array': objects_array}
-    content = {'urls': last_url_element,
+    context = {'urls': last_url_element,
                'dict_of_array': dict_of_array}
-    print(content)
-    return render(request, "websiteApp/store.html", content)
+    print(context)
+    return render(request, "websiteApp/store.html", context)
 
 def store_result(request): # http://127.0.0.1:8000/renderApp/greet/Иванов
     print(request.__dir__())

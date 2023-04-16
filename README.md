@@ -52,17 +52,26 @@ pip install -r requirements.txt
 
 pip freeze > requirements.txt
 
-cd ../
 
-django-admin startproject project01 project01
+django-admin startproject project01 ../project01
 
-cd project01
+python manage.py runserver 10.0.2.15:8000
+
+python manage.py -h
+
+python manage.py startapp render_app ../render_app
+
+cat ../render_app/apps.py
+
+'render_app.apps.RenderAppConfig'
 
 vim project01/settings.py
 
-ALLOWED_HOSTS = ["*"]
+'render_app.apps.RenderAppConfig',
 
-python manage.py runserver 10.0.2.15:8000
+ALLOWED_HOSTS = ["*"],
+
+
 
 https://docs.djangoproject.com/en/4.1/intro/tutorial01/
 
@@ -91,9 +100,23 @@ pip install -r requirements.txt
 
 pip freeze > requirements.txt
 
-django-admin startproject ProjectName ../ProjectName
+django-admin startproject project01 ../project01
 
-ALLOWED_HOSTS = ["*"]
+python manage.py runserver 10.0.2.15:8000
+
+python manage.py -h
+
+python manage.py startapp render_app ../render_app
+
+cat ../render_app/apps.py
+
+'render_app.apps.RenderAppConfig'
+
+vim project01/settings.py
+
+'render_app.apps.RenderAppConfig',
+
+ALLOWED_HOSTS = ["*"],
 
 python manage.py runserver 10.0.2.15:8000
 
@@ -142,6 +165,8 @@ pip install -r requirements.txt
 vim django010Project/settings.py
 
 python manage.py runserver 185.46.9.94:8000
+
+python manage.py mikemigrations
 
 python manage.py migrate
 

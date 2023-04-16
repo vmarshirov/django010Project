@@ -1,0 +1,22 @@
+{% extends "../websiteApp/layout.html" %}
+
+
+{% block title %}
+    <title>Форма. Формируем и передаем</title>
+{% endblock %}
+
+
+{% block main %}
+    <div id="pk">{{ last_url_element.last_url_element }}</div>
+    <h5 class="card-title text-center">Форма. Формируем и передаем</h5>
+    <form action="/websiteApp/form_get" metod='get' target="_self">
+        {{ abc_form }}
+        <label for="id_submit">&nbsp;</label>
+        <button type="submit" id="id_submit">Отправить</button>
+        </label>
+    </form>
+{% endblock %}
+
+
+
+
