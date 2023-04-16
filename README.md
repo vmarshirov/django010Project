@@ -79,6 +79,10 @@ deactivate
 
 ### Для Windows: 
 
+mkdir project01
+
+cd project01
+
 python -m venv env
 
 env\Scripts\activate
@@ -106,7 +110,7 @@ python manage.py runserver 10.0.2.15:8000
 
 python manage.py -h
 
-python manage.py startapp render_app ../render_app
+python manage.py startapp render_app
 
 cat ../render_app/apps.py
 
