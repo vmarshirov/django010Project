@@ -40,7 +40,7 @@ def f_str_int_slug(request, str_value, int_value,
     print(type(int_value), int_value)
     print(type(slug_value), slug_value)
     return HttpResponse(
-        f"f_str, str_value: {str_value} <br>f_int, f_int: {slug_value} <br>f_slug, slug_value: {slug_value}")
+        f"f_str, str_value: {str_value} <br>f_int, f_int: {int_value} <br>f_slug, slug_value: {slug_value}")
 
 
 def f_path(request, path_value):  # http://127.0.0.1:8000/responseApp/f_path/building/your-1st/django-site
