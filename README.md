@@ -59,19 +59,15 @@ python manage.py runserver 10.0.2.15:8000
 
 python manage.py -h
 
-python manage.py startapp render_app ../render_app
+python manage.py startapp responseApp
 
-cat ../render_app/apps.py
-
-'render_app.apps.RenderAppConfig'
+cat ../responseApp/apps.py
 
 vim project01/settings.py
 
-'render_app.apps.RenderAppConfig',
+'responseApp.apps.ResponseAppConfig',
 
 ALLOWED_HOSTS = ["*"],
-
-
 
 https://docs.djangoproject.com/en/4.1/intro/tutorial01/
 
@@ -89,7 +85,6 @@ env\Scripts\activate
 
 Отрываем powershell от имени администратора и : Set-ExecutionPolicy RemoteSigned 
 https://medium.com/@ph1l74/python-venv-%D0%BD%D0%B0-windows-10-2118ad685b1 
-
 
 
 https://python.land/virtual-environments/virtualenv
@@ -112,15 +107,15 @@ python manage.py runserver 10.0.2.15:8000
 
 python manage.py -h
 
-python manage.py startapp render_app
+python manage.py startapp responseApp
 
-cat ../render_app/apps.py
+cat ../responseApp/apps.py
 
-'render_app.apps.RenderAppConfig'
+'responseApp.apps.ResponseAppConfig'
 
 vim project01/settings.py
 
-'render_app.apps.RenderAppConfig',
+'responseApp.apps.ResponseAppConfig',
 
 ALLOWED_HOSTS = ["*"],
 
