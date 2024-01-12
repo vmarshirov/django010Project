@@ -23,5 +23,3 @@ urlpatterns = [
     path('renderApp/', include("renderApp.urls")),
     path('websiteApp/', include("websiteApp.urls")),
 ]
-
-
