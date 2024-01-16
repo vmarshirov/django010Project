@@ -56,23 +56,13 @@ dir
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
-python manage.py -h  
-
-python manage.py startapp responseApp
-
-смотрим  ../responseApp/apps.py
-
-'responseApp.apps.ResponseappConfig'
+Ctrl + C
 
 редактируем project01/settings.py
 
-'responseApp.apps.ResponseappConfig',
-
 ALLOWED_HOSTS = ["*"],
 
-python manage.py runserver 10.0.2.15:8000
-
-https://docs.djangoproject.com/en/4.1/intro/tutorial01/
+python manage.py runserver 
 
 deactivate
 
@@ -114,26 +104,34 @@ django-admin startproject project01 ../project01
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
-python manage.py -h  
-
-python manage.py startapp responseApp
-
-смотрим ../responseApp/apps.py
-
-'responseApp.apps.ResponseappConfig'
-
-редактируем project01/settings.py
-
-'responseApp.apps.ResponseappConfig',
-
-ALLOWED_HOSTS = ["*"],
-
-python manage.py runserver 10.0.2.15:8000
+Ctrl + C
 
 deactivate
 
 
+### Конфигурирование и запуск после извлечения архива
 
+python -m venv env
+
+env\Scripts\activate
+
+python -m pip install --upgrade pip
+
+pip list
+
+pip install -r requirements.txt
+
+python manage.py runserver 
+
+При необходимости когда начнем работать с моделями
+ 
+python manage.py mikemigrations
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+admin root
 
 ### Конфигурирование и запуск Django (после GitHub)
 
@@ -152,22 +150,7 @@ git remote add origin ...
 git pull origin main
 
 
-### Окончательное конфигурирование и запуск
 
-
-pip install -r requirements.txt
-
-vim django010Project/settings.py
-
-python manage.py runserver 185.46.9.94:8000
-
-python manage.py mikemigrations
-
-python manage.py migrate
-
-python manage.py createsuperuser
-
-admin root
 
 
 ### Редирект порта для сервера
