@@ -62,11 +62,11 @@ python manage.py startapp responseApp
 
 смотрим  ../responseApp/apps.py
 
-'responseApp.apps.ResponseAppConfig'
+'responseApp.apps.ResponseappConfig'
 
 редактируем project01/settings.py
 
-'responseApp.apps.ResponseAppConfig',
+'responseApp.apps.ResponseappConfig',
 
 ALLOWED_HOSTS = ["*"],
 
