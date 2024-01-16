@@ -74,6 +74,8 @@ deactivate
 
 ### Для Windows: 
 
+Запускаем powershel или cmd
+
 mkdir project01
 
 cd project01
