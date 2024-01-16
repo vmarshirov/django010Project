@@ -98,9 +98,13 @@ pip list
 
 py -m pip install Django или  pip install -U django==8.0.4 или (если восстанавливаем из архива) pip install -r requirements.txt  
 
-pip freeze > requirements.txt
+pip list
 
 django-admin startproject project01 ../project01
+
+dir
+
+pip freeze > requirements.txt
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
