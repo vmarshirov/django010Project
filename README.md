@@ -46,9 +46,13 @@ pip list
 
 py -m pip install Django или  pip install -U django==8.0.4 или (если восстанавливаем из архива) pip install -r requirements.txt  
 
+pip list
+
 pip freeze > requirements.txt
 
 django-admin startproject project01 ../project01
+
+dir
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
@@ -56,11 +60,11 @@ python manage.py -h
 
 python manage.py startapp responseApp
 
-cat ../responseApp/apps.py
+смотрим  ../responseApp/apps.py
 
 'responseApp.apps.ResponseAppConfig'
 
-vim project01/settings.py
+редактируем project01/settings.py
 
 'responseApp.apps.ResponseAppConfig',
 
@@ -114,13 +118,13 @@ python manage.py -h
 
 python manage.py startapp responseApp
 
-cat ../responseApp/apps.py
+смотрим ../responseApp/apps.py
 
-'responseApp.apps.ResponseAppConfig'
+'responseApp.apps.ResponseappConfig'
 
-vim project01/settings.py
+редактируем project01/settings.py
 
-'responseApp.apps.ResponseAppConfig',
+'responseApp.apps.ResponseappConfig',
 
 ALLOWED_HOSTS = ["*"],
 
