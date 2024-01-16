@@ -18,10 +18,9 @@ def html(request):  # http://127.0.0.1:8000/responseApp/html/
 
 
 def f_str(request, str_value):  # http://127.0.0.1:8000/responseApp/f_str/abc
-    print("type(request), request: ", type(request), request.path)
-    print("type(str_value), str_value: ", type(str_value), str_value)
+    print("str_value: ", type(str_value), str_value)
     return HttpResponse(
-        f"<p>f_str, str_value.capitalize():  {str_value.capitalize()}</p>")
+        f"<p>f_str, str_value:  {str_value}</p>")
 
 
 def f_int(request, int_value):  # http://127.0.0.1:8000/responseApp/f_int/12345
@@ -50,6 +49,7 @@ def f_path(request, path_value):  # http://127.0.0.1:8000/responseApp/f_path/bui
     path_elements_amount = path_elements.__len__()
     print(path_elements_amount)
 
+    print(dir(request))
     print("request.path: ", request.path)
     request_path_elements = request.path.split("/")
     print('request_path_elements:', request_path_elements)
