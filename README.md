@@ -19,8 +19,8 @@ https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-e
 
 ## django010Project
 
-### для не Windows
-### env  
+### для не Windows, использовать терминал
+
  
 su
 
