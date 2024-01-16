@@ -130,8 +130,6 @@ ALLOWED_HOSTS = ["*"],
 
 python manage.py runserver 10.0.2.15:8000
 
-https://docs.djangoproject.com/en/4.1/intro/tutorial01/
-
 deactivate
 
 
