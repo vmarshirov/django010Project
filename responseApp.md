@@ -4,7 +4,6 @@ python manage.py startapp responseApp
 
 смотрим ../responseApp/apps.py
 
-'responseApp.apps.ResponseappConfig'
 
 редактируем project01/settings.py
 
