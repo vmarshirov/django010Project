@@ -9,6 +9,5 @@ python manage.py startapp responseApp
 
 'responseApp.apps.ResponseappConfig',
 
-python manage.py runserver
 
 http://127.0.0.1:8000/responseApp
