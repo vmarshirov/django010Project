@@ -104,7 +104,6 @@ django-admin startproject project01 ../project01
 
 dir
 
-pip freeze > requirements.txt
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
@@ -112,6 +111,7 @@ Ctrl + C
 
 deactivate
 
+pip freeze > requirements.txt
 
 ### Конфигурирование и запуск после извлечения архива
 
