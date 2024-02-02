@@ -3,6 +3,11 @@ from django import forms
 from django.http import HttpResponse
 
 
+def home(request):
+    print("def home")
+    last_url_element = {"last_url_element": 'home'}
+    return render(request, "home.html", last_url_element)
+
 def def_url_elements(request):
     url_elements_list = request.path.split("/")
     print("url_elements_list: ", url_elements_list)
@@ -12,17 +17,15 @@ def def_url_elements(request):
 
 def index(request):
     last_url_element = def_url_elements(request)
-    return render(request, "websiteApp/index.html", last_url_element)
+    return render(request, "index.html", last_url_element)
 
 
-def home(request):
-    last_url_element = {"last_url_element": 'home'}
-    return render(request, "websiteApp/home.html", last_url_element)
+
 
 
 def form(request):
     last_url_element = def_url_elements(request)
-    return render(request, "websiteApp/form.html", last_url_element)
+    return render(request, "form.html", last_url_element)
 
 
 
@@ -37,7 +40,7 @@ def form_create(request):
     print(abc_form)
     context = {'last_url_element': last_url_element,
                'abc_form': abc_form}
-    return render(request, 'websiteApp/form_create.html', context)
+    return render(request, 'form_create.html', context)
 
 def form_get(request):
     print(request.GET)
@@ -70,7 +73,7 @@ def form_get_all(request):
 
 def form_abc(request):
     last_url_element = def_url_elements(request)
-    return render(request, "websiteApp/form_abc.html", last_url_element)
+    return render(request, "form_abc.html", last_url_element)
 
 def store(request):
     last_url_element = def_url_elements(request)
@@ -112,7 +115,7 @@ def store(request):
     context = {'urls': last_url_element,
                'dict_of_array': dict_of_array}
     print(context)
-    return render(request, "websiteApp/store.html", context)
+    return render(request, "store.html", context)
 
 def store_result(request): # http://127.0.0.1:8000/renderApp/greet/Иванов
     print(request.__dir__())
@@ -128,4 +131,4 @@ def store_result(request): # http://127.0.0.1:8000/renderApp/greet/Иванов
         d[vendor_code[i]] = amount[i]
         i+=1
     print(d)
-    return render(request, "websiteApp/store_result.html", {'d':d})
+    return render(request, "store_result.html", {'d':d})

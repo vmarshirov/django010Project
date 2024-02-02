@@ -108,9 +108,7 @@ LANGUAGE_CODE = 'ru-ru'
 
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Europe/Moscow'
-
 USE_I18N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -119,10 +117,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # !!! Дополнить
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-print("STATICFILES_DIRS:", STATICFILES_DIRS)
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static",
+#]
+#print("STATICFILES_DIRS:", STATICFILES_DIRS)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

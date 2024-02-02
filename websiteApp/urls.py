@@ -19,7 +19,6 @@ from . import views
 
 app_name = "websiteApp"
 urlpatterns = [
-    path("index/", views.index),
     path("", views.home),
     path("home/", views.home, name="home"),
     path("form/", views.form, name="form"),
