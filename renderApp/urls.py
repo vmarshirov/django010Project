@@ -24,4 +24,5 @@ urlpatterns = [
     path("page_01/<path:path_value>", views.page_01, name="page_01"),
     path("page_02/<path:path_value>", views.page_02, name="page_02"),
     path("pages/<path:path_value>", views.pages, name="pages"),
+    path("task/<path:path_value>", views.task, name="task"),
 ]
