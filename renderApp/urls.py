@@ -25,4 +25,5 @@ urlpatterns = [
     path("page_02/<path:path_value>", views.page_02, name="page_02"),
     path("pages/<path:path_value>", views.pages, name="pages"),
     path("task/<path:path_value>", views.task, name="task"),
+    path("store/", views.store, name="store"),
 ]

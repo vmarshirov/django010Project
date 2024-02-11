@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     {% block title %}
     {% endblock %}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+{% load static %}
+<link href="{% static 'css/mycss.css' %}" rel="stylesheet">
 </head>
 <body>
+
+    <header class="card">
+        <div class="card-body bg-color">
+            <h5 class="card-title">CTRL+F5<br>common+shift+R</h5>
+            <img src="{% static 'images/settings_django.png' %}" height="30px">
+        </div>
+    </header>
 
 <nav>
     <ul>

@@ -1,0 +1,16 @@
+.bg-color {
+    background-color: red;
+    background-image: url(/static/images/settings_django.png);
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+label {
+    display: table-row;
+    line-height: 2.0rem;
+}
+
+input {
+    width: fit-content;
+}
