@@ -1,7 +1,7 @@
 .bg-color {
     background-color: red;
-    background-image: url(/static/images/settings_django.png);
-    background-size: 10%;
+    background-image: url(../images/engine.jpg);
+    background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -14,3 +14,7 @@ label {
 input {
     width: fit-content;
 }
+
+a:hover {
+    text-decoration: underline;
+  }

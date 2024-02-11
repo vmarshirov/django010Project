@@ -66,9 +66,9 @@ def task(request, path_value):
     return render(request, "task.html", context)
 
 
-def store(request):
+def objects_arrays(request):
     
-    objects_array = [
+    goods_array = [
         {
             "id": "1",
             "title": "Товар 1",
@@ -102,7 +102,21 @@ def store(request):
             "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_004.jpg"
         }
     ]
-    dict_of_array = {'objects_array': objects_array}
+
+    box_array = [
+        {
+            "title": "Название 1",
+            "description": "Описание 1",
+            "img": "/images/1_1.png"
+        },
+                {
+            "title": "Название 2",
+            "description": "Описание 2",
+            "img": "/images/1_2.png"
+        },
+    ]
+
+    dict_of_array = {'goods_array': goods_array, 'box_array':box_array}
     context = {'dict_of_array': dict_of_array}
-    print(context)
-    return render(request, "store.html", context)
+    print("context: ", context)
+    return render(request, "objects_arrays.html", context)
