@@ -1,6 +1,6 @@
 {
     "python.languageServer": "Pylance",
-     "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.autoSearchPaths": true,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.completeFunctionParens": true,
@@ -16,17 +16,14 @@
             "includeAllSymbols": true
         }
     ],
-      
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-
-
     "emmet.includeLanguages": {
         "django-html": "html"
     },
     "files.associations": {
-        "**/*.html": "html",
+        "**/templates/*.html": "django-html",
         "**/templates/*/*.html": "django-html",
         "**/templates/*/*/*.html": "django-html",
         "**/requirements{/**,*}.{txt,in}": "pip-requirements"
@@ -35,8 +32,6 @@
         "cms",
         "wagtail"
     ],
-
-
     "[django-html]": {
         "editor.defaultFormatter": "junstyle.vscode-django-support",
         "breadcrumbs.showClasses": true,
@@ -45,5 +40,5 @@
             "comments": true,
             "strings": true
         }
-    }
+    },
 }
