@@ -1,5 +1,4 @@
 {
-
     "python.languageServer": "Pylance",
      "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.autoSearchPaths": true,
@@ -21,6 +20,8 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+
+
     "emmet.includeLanguages": {
         "django-html": "html"
     },
@@ -28,7 +29,6 @@
         "**/*.html": "html",
         "**/templates/*/*.html": "django-html",
         "**/templates/*/*/*.html": "django-html",
-        "**/templates/*": "django-txt",
         "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
     "django.snippets.exclude": [

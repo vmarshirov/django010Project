@@ -1,47 +1,49 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
-    {% load static %}
-    <link href="{% static '/css/mycss.css' %}" rel="stylesheet">
-    {% block title %}
-    {% endblock %}
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            rel="stylesheet">
+        {% load static %}
+        <link href="{% static '/css/mycss.css' %}" rel="stylesheet">
+        {% block title %}
+        {% endblock %}
+    </head>
 
-<body>
+    <body>
 
-<div class="container">
+        <div class="container">
 
-    <header class="card">
-        <div class="card-body bg-color">
-            <h5 class="card-title">CTRL+F5<br>common+shift+R</h5>
-            <img src="{% static '/images/engine.jpg' %}" height="30px">
+            <header class="card">
+                <div class="card-body bg-color">
+                    <h5 class="card-title">CTRL+F5<br>common+shift+R</h5>
+                    <img src="{% static '/images/engine.jpg' %}" height="30px">
+                </div>
+            </header>
+
+            <div class="card ">
+
+                <navigation class="card-header">
+                    {% include 'navigation.html' %}
+                </navigation>
+
+                <main class="card-body">
+                    {% block main %}
+                    {% endblock %}
+                </main>
+
+            </div>
+
+            <footer class="card">
+                <div class="card-body">
+                    <p class="card-text">Контакты и др.</p>
+                </div>
+            </footer>
+
         </div>
-    </header>
+    </body>
 
-    <div class="card ">
-
-        <navigation class="card-header">
-            {% include 'navigation.html' %}
-        </navigation>
-
-
-        <main class="card-body">
-            {% block main %}
-            {% endblock %}
-        </main>
-
-    </div>
-
-    <footer class="card">
-        <div class="card-body">
-            <p class="card-text">Контакты и др.</p>
-        </div>
-    </footer>
-
-</div>
-</body>
 </html>
