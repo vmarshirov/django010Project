@@ -141,9 +141,11 @@ pip list
 
 pip install -r requirements.txt
 
+pip list
+
 python manage.py runserver 
 
-При необходимости когда начнем работать с моделями
+### При необходимости когда начнем работать с моделями
  
 python manage.py mikemigrations
 
