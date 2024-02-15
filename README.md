@@ -66,6 +66,20 @@ python manage.py runserver
 
 deactivate
 
+#### Разворачиваем из архива 
+
+cd project01
+
+python3 -m venv env
+
+. env/bin/activate
+
+pip install --upgrade pip
+
+pip list
+
+pip install -r requirements.txt
+
 ### Для Windows: 
 
 Запускаем powershel или cmd
