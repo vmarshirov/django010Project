@@ -80,6 +80,8 @@ pip list
 
 pip install -r requirements.txt
 
+python manage.py runserver
+
 ### Для Windows: 
 
 Запускаем powershel или cmd
