@@ -7,14 +7,14 @@
 
 {% block main %}
     {% load static %}
-    <div id="pk" name={{ urls.last_url_element }}>{{ urls.last_url_element }}</div>
+    {% comment %} <div id="pk" name={{ urls.last_url_element }}>{{ urls.last_url_element }}</div> {% endcomment %}
+    <div id="pk">{{ last_url_element }}</div>
     <h5 class="card-title text-center">Магазин</h5>
     {#    path_element: {{path_element.path_element}}#}
     {#    <br>objects_array: {{objects_array.objects_array}}#}
 
     <div class="card">
         <div class="card-body">
-{#            <form action="https://www.bing.com/search" id="UserEnter" name="UserEnter" target="_blank">#}
             <form action="{% url 'websiteApp:store_result' %}" id="UserEnter" name="UserEnter" target="_blank">
                 <ul class="d-flex flex-row flex-wrap ">
                     {% for object in dict_of_array.objects_array %}

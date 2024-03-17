@@ -7,25 +7,23 @@
 
 
 {% block main %}
-                <div id="pk">{{ last_url_element }}</div>
-                <h5 class="card-title text-center">Form ABC</h5>
-                <p>Принадлежит ли целое С диапазону A-B? Если принадлежит - отправить все на сервер</p>
-                {#    <form action="http://185.182.111.214:7628/cgi-bin/form_action.py" id="UserEnter" name="UserEnter" target="_blank">#}
-{#                <form action="https://www.bing.com/search" id="UserEnter" name="UserEnter" target="_blank">#}
-                <form action="/websiteApp/form_get_all" id="UserEnter" name="UserEnter" target="_blank">
-                    <ul class="list-group">
-                        <li class="list-group-item disabled"><input name="q" type="hidden"></li>
-                        <li class="list-group-item"><label>a: <input id="a" name="a" type="number" value=10></label></li>
-                        <li class="list-group-item"><label>b: <input id="b" name="b" type="number" value=20></label></li>
-                        <li class="list-group-item"><label>c: <input id="c" name="c" type="number" value=21></label></li>
-                        <li class="list-group-item disabled"><input name="result" type="hidden"value=""></li>
-                        <li class="list-group-item"><label><input id="verify" type="button" value="Проверить"></label></li>
-                        <li class="list-group-item"><label><input id="send" type="button" value="Отправить"></label></li>
-                    </ul>
-                </form>
-                <p id="result">Результаты вычислений: </p>
-                {% load static %}
-                <script src="{% static 'js/form_abc.js' %}"></script>
+    <div id="pk">{{ last_url_element }}</div>
+    <h5 class="card-title text-center">Form ABC</h5>
+    <p>Принадлежит ли целое С диапазону A-B? Если принадлежит - отправить все на сервер</p>
+    <form action="{% url 'websiteApp:form_get_all' %}" id="UserEnter" name="UserEnter" target="_blank">
+        <ul class="list-group">
+            <li class="list-group-item disabled"><input name="cоntent" type="hidden"></li>
+            <li class="list-group-item"><label>A: </label><input id="a" name="a" type="number" value=10></li>
+            <li class="list-group-item"><label>B: </label><input id="b" name="b" type="number" value=20></label></li>
+            <li class="list-group-item"><label>C: </label><input id="c" name="c" type="number" value=19></label></li>
+            <li class="list-group-item disabled"></label><input name="result" type="hidden"value=""></li>
+            <li class="list-group-item"><label></label><input id="verify" type="button" value="Проверить"></label></li>
+            <li class="list-group-item"><label></label><input id="send" type="button" value="Отправить"></label></li>
+        </ul>
+    </form>
+    <p id="result">Результаты вычислений: </p>
+    {% load static %}
+    <script src="{% static 'js/form_abc.js' %}"></script>
 {% endblock %}
 
 

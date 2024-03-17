@@ -1,56 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     {% block title %}
+
     {% endblock %}
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet" />
     {% load static %}
-    <link href="{% static 'css/mycss.css' %}" rel="stylesheet">
-</head>
+    <link href="{% static 'css/mycss.css' %}" rel="stylesheet" />
+  </head>
 
-<body>
-
-<div class="container">
-
-    <header class="card">
+  <body>
+    <div class="container">
+      <div class="card">
         <div class="card-body bg-color">
-            <h5 class="card-title">CTRL+F5<br>common+shift+R</h5>
-            <img src="{% static 'images/settings_django.png' %}" height="30px">
+          <h5 class="card-title">CTRL+F5<br />common+shift+R</h5>
+          <img src="{% static 'images/settings_django.png' %}" height="30px" />
         </div>
-    </header>
+      </div>
 
+      <div class="card">
+        <div class="card-header">
+          {% include 'navi.html' %}
+        </div>
 
-    <div class="card ">
+        <div class="card-body">
+          {% block main %}
 
-        <navigation class="card-header">
-            {% include 'navi.html' %}
-        </navigation>
+          {% endblock %}
+        </div>
+      </div>
 
-
-        <main class="card-body">
-            {% block main %}
-            {% endblock %}
-        </main>
-
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Контакты и др.</p>
+        </div>
+      </div>
     </div>
 
-
-    <footer class="card">
-        <div class="card-body">
-            <p class="card-text">Контакты и др.</p>
-        </div>
-    </footer>
-
-
-</div>
-
-
-<script src="{% static 'js/navigation.js' %}"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="{% static 'js/navigation.js' %}"></script>
+    <script crossorigin="anonymous" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

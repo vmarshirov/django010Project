@@ -53,21 +53,22 @@ def task(request, path_value):
     path_len = request_path_elements.__len__()
     formulation_value = request_path_elements[path_len - 2]
     a_value = int(request_path_elements[path_len - 1])
-    print ("a_value: ", a_value)
-    if a_value > 0:  result_value = "a > 0"
-    else: result_value = "a <= 0"
+    print("a_value: ", a_value)
+    if a_value > 0:
+        result_value = "a > 0"
+    else:
+        result_value = "a <= 0"
 
     context = {
         "formulation_value": formulation_value,
         "a_value": a_value,
-        "result_value": result_value
+        "result_value": result_value,
     }
-    print ("context: ",context) 
+    print("context: ", context)
     return render(request, "task.html", context)
 
 
 def objects_arrays(request):
-    
     goods_array = [
         {
             "id": "1",
@@ -75,7 +76,7 @@ def objects_arrays(request):
             "vendor_code": "VC111",
             "description": "Описание 1",
             "price": 100,
-            "img": "/images/uso_001.jpg"
+            "img": "/images/uso_001.jpg",
         },
         {
             "id": "2",
@@ -83,7 +84,7 @@ def objects_arrays(request):
             "vendor_code": "VC222",
             "description": "Описание 2",
             "price": 200,
-            "img": "/images/uso_002.jpg"
+            "img": "/images/uso_002.jpg",
         },
         {
             "id": "3",
@@ -91,7 +92,7 @@ def objects_arrays(request):
             "vendor_code": "VC333",
             "description": "Описание 3",
             "price": 300,
-            "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_003.jpg"
+            "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_003.jpg",
         },
         {
             "id": "4",
@@ -99,24 +100,16 @@ def objects_arrays(request):
             "vendor_code": "VC444",
             "description": "Описание 4",
             "price": 400,
-            "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_004.jpg"
-        }
+            "img": "https://raw.githubusercontent.com/vmarshirov/g06u28/main/images/uso_004.jpg",
+        },
     ]
 
     box_array = [
-        {
-            "title": "Название 1",
-            "description": "Описание 1",
-            "img": "/images/1_1.png"
-        },
-                {
-            "title": "Название 2",
-            "description": "Описание 2",
-            "img": "/images/1_2.png"
-        },
+        {"title": "Название 1", "description": "Описание 1", "img": "/images/1_1.png"},
+        {"title": "Название 2", "description": "Описание 2", "img": "/images/1_2.png"},
     ]
 
-    dict_of_array = {'goods_array': goods_array, 'box_array':box_array}
-    context = {'dict_of_array': dict_of_array}
+    dict_of_array = {"goods_array": goods_array, "box_array": box_array}
+    context = {"dict_of_array": dict_of_array}
     print("context: ", context)
     return render(request, "objects_arrays.html", context)

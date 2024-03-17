@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>GET. Создаем и обновляем форму</title>
+{% endblock %}
+
+{% block main %}
+  <div id="pk">{{ last_url_element }}</div>
+  <h5 class="card-title text-center">GET. Создаем и обновляем форму</h5>
+  <div class="card">
+    <div class="card-body">
+      <form action="{% url 'websiteApp:abc_form_get' %}">
+        <div class="section">
+          {{ form_get.as_div }}
+          <div>
+            <label for="id_submit"></label>
+            <button type="submit" id="id_submit">Вычислить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% if result %}
+    Результат: {{ result }}
+  {% endif %}
+{% endblock %}

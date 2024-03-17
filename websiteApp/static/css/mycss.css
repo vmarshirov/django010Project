@@ -1,16 +1,69 @@
 .bg-color {
     background-color: red;
-    background-image: url(/static/images/settings_django.png);
-    background-size: 10%;
+    background-image: url(../images/engine.jpg);
+    background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-label {
-    display: table-row;
-    line-height: 2.0rem;
+
+div{
+width: 100%; 
+padding-top: 1.0rem;   
+}
+.main {
+    /*Контейнер*/
+    display: flex;
+    /*главная ось*/
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /*поперечная ось */
+    align-items: flex-start;
+    width: 100%;
 }
 
-input {
-    width: fit-content;
+.section {
+    /*Контейнер*/
+    display: flex;
+    /*главная ось*/
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: left;
+    /*поперечная ось */
+    align-items: flex-start;
+    width: 100%;
+}
+
+label {
+    display: inline-table;
+    line-height: 1.0rem;
+    width: 18%;    
+}
+
+input,textarea {
+    display: ininline-table;
+    resize: horizontal; 
+    padding: 1.0rem;   
+    height: 3.0rem;
+}
+
+
+table {
+    width: 100%;
+}
+
+
+th {
+    width: 20em;
+}
+
+td {
+    width: -webkit-fill-available;
+}
+
+
+
+a:hover {
+    text-decoration: underline;
 }

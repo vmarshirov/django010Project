@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Выводим ключи и значения</title>
+{% endblock %}
+
+{% block main %}
+  <div id="pk">{{ last_url_element }}</div>
+  <h5 class="card-title text-center">Выводим ключи и значения</h5>
+  <div class="card">
+    <div class="card-body">
+      <ul class="d-flex flex-column flex-wrap">
+        {% for key, value in items_dict.items %}
+          <li class="m-2 list-group-item">{{ key }}: {{ value }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}key, value in last_object.items

@@ -25,9 +25,10 @@ function verify() {
 }
 
 function send() {
+    verify();
     if (check) {
         let textCondition = document.getElementsByTagName('p')[0].innerText
-        document.getElementsByName('q')[0].value = textCondition;
+        document.getElementsByName('cоntent')[0].value = textCondition;
         document.getElementsByName('result')[0].value = result;
         document.getElementById("UserEnter").submit();
     } else {
@@ -39,7 +40,6 @@ function verify_send() {
     verify();
     send();
 }
-
 
 
 let messageText = document.getElementById("result").innerText

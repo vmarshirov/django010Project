@@ -1,14 +1,11 @@
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
 
 {% block title %}
-    <title>Домашняя страница(home)</title>
+  <title>Домашняя страница(home)</title>
 {% endblock %}
-
 
 {% block main %}
-            <div id="pk">{{ last_url_element }}</div>
-            <h5 class="card-title text-center">Домашняя страница</h5>
-            <p class="card-text">Содержание домашней  страницы</p>
+  <div id="pk">{{ last_url_element }}</div>
+  <h5 class="card-title text-center">Домашняя страница</h5>
+  <p class="card-text">Содержание домашней страницы</p>
 {% endblock %}
-

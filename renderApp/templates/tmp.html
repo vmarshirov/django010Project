@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <title>GET. Создаем и обновляем форму</title>
+
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet" />
+
+    <link href="/static/css/mycss.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body bg-color">
+          <h5 class="card-title">CTRL+F5<br />common+shift+R</h5>
+          <img src="/static/images/settings_django.png" height="30px" />
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a id="home" class="nav-link" href="/websiteApp/home/">home</a>
+            </li>
+
+            <li class="nav-item">
+              <a id="form_abc" class="nav-link" href="/websiteApp/form_abc/">form_abc</a>
+            </li>
+
+            <li class="nav-item">
+              <a id="abc_form_get" class="nav-link" href="/websiteApp/abc_form_get/">abc_form_get</a>
+            </li>
+
+            <li class="nav-item">
+              <a id="abc_form_post" class="nav-link" href="/websiteApp/abc_form_post/">abc_form_post</a>
+            </li>
+
+            <li class="nav-item">
+              <a id="store" class="nav-link" href="/websiteApp/store/">store</a>
+            </li>
+          </ul>
+
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="/websiteApp/home/">home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/websiteApp/form_abc/">form_abc</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="/websiteApp/abc_form_get/">abc_form_get</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/websiteApp/abc_form_post/">abc_form_post</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/websiteApp/store/">store</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-body">
+          <div id="pk">abc_form_get</div>
+          <h5 class="card-title text-center">GET. Создаем и обновляем форму</h5>
+          <div class="card">
+            <div class="card-body">
+              <form action="/websiteApp/abc_form_get/">
+                <div class="section">
+                  <div>
+                    <label for="id_content">Формулировка задачи:</label>
+
+                    <textarea name="content" cols="40" rows="10" required id="id_content">Равна ли C сумме A и B? Равна ли C сумме A и B?</textarea>
+                  </div>
+
+                  <div>
+                    <label for="id_a">Значение A:</label>
+
+                    <input type="number" name="a" value="1" id="id_a" />
+                  </div>
+
+                  <div>
+                    <label for="id_b">Значение B:</label>
+
+                    <input type="number" name="b" value="2" required id="id_b" />
+                  </div>
+
+                  <div>
+                    <label for="id_c">Значение C:</label>
+
+                    <input type="number" name="c" value="3" required id="id_c" />
+                  </div>
+                  <div>
+                    <label for="id_submit"></label>
+                    <button type="submit" id="id_submit">Вычислить</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Контакты и др.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/navigation.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

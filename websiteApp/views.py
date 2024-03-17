@@ -1,82 +1,113 @@
 from django.shortcuts import render
-from django import forms
+from .forms import AbcForm
 from django.http import HttpResponse
 
-
 def home(request):
-    print("def home")
-    last_url_element = {"last_url_element": 'home'}
-    return render(request, "home.html", last_url_element)
+    print("home")
+    last_url_element = last_url_elemen(request)
+    return render(request, "home.html", {"last_url_element":last_url_element})
 
-def def_url_elements(request):
+def last_url_elemen(request):
     url_elements_list = request.path.split("/")
     print("url_elements_list: ", url_elements_list)
     print("last_url_element: ", url_elements_list[-2])
-    return ({"last_url_element": url_elements_list[-2]})
+    return ( url_elements_list[-2])
 
 
-def index(request):
-    last_url_element = def_url_elements(request)
-    return render(request, "index.html", last_url_element)
-
-
-
-
-
-def form(request):
-    last_url_element = def_url_elements(request)
-    return render(request, "form.html", last_url_element)
-
-
-
-class AbcFormCreate(forms.Form):
-    a = forms.IntegerField(initial=1, min_value=2)
-    b = forms.IntegerField(required=False)
-    c = forms.IntegerField(label='c_lable' )
-
-def form_create(request):
-    last_url_element = def_url_elements(request)
-    abc_form = AbcFormCreate()
-    print(abc_form)
-    context = {'last_url_element': last_url_element,
-               'abc_form': abc_form}
-    return render(request, 'form_create.html', context)
-
-def form_get(request):
-    print(request.GET)
-    print(request.GET.get("a"))
-    print(request.GET.get("b"))
-    print(request.GET.get("c"))
-    a = request.GET.get("a")
-    b = request.GET.get("b")
-    c = request.GET.get("c")
-    abc_obj={"a":a, "b":b, "c":c}
-    return HttpResponse(f"""
-    <pre>
-    a = {a}
-    b = {b}
-    c = {c}
-    abc_obj = {abc_obj}
-    a_abc_obj = {abc_obj['a']}
-    </pre>
-    """)
 
 def form_get_all(request):
-    print(request.GET)
-    r = list(request.GET.values())
-    return HttpResponse(f"""
-    <pre> См. терминал 
-    {r}
-    </pre>
-    """)
+    last_url_element = last_url_elemen(request)
+
+    print("\n\nrequest.GET\n", request.GET)
+    print('\n\ndir(request.GET)\n',dir(request.GET))
+
+    keys_list = list(request.GET.keys())
+    print("\n\nkeys_list\n", keys_list)
+
+    values_list = list(request.GET.values())
+    print("\n\nvalues_list\n", values_list)
+
+    items_dict = dict(request.GET.items())
+    print("\n\n items_dict \n", items_dict)
+
+    print("\n\nprn:\n",request.GET.getlist)
+    
+    context = {'items_dict': items_dict, 'last_url_element':last_url_element}
+    return render(request, 'context.html', context) 
+
+    # return HttpResponse(f"""
+    # {values_list}
+    # </pre>
+    # """)
 
 
 def form_abc(request):
-    last_url_element = def_url_elements(request)
-    return render(request, "form_abc.html", last_url_element)
+    last_url_element = last_url_elemen(request)
+    # <div id="pk">{{ last_url_element }}</div>
+    context = {'last_url_element':last_url_element}
+    return render(request, "form_abc.html", context)
+
+
+def solution(a, b, c):
+    if a + b == c:   result = " С равна сумме A и B"
+    else:   result = "С не равна сумме A и B"
+    return result   
+
+ 
+def abc_form_get(request):
+    last_url_element = last_url_elemen(request)
+    form = AbcForm(request.GET)
+    if form.is_valid():
+        print("\n\nform is valid")
+        # form =  AbcForm(initial={"c": 0})
+        print(form)
+        form_dict = form.cleaned_data
+        print(form_dict)
+        a = form_dict['a']
+        b = form_dict['b']
+        c = form_dict['c']
+        print("a,b,c:", a,b,c)
+        result = solution(a, b, c) 
+        context = {'form_get': form, 'result': result, 'last_url_element':last_url_element}
+        return render(request, 'abc_form_get.html', context)
+    else: 
+        print("\n\nform is not valid")
+        form = AbcForm()
+        context = {'form_get': form, 'last_url_element':last_url_element}
+        return render(request, 'abc_form_get.html', context) 
+
+
+def abc_form_post(request):
+    last_url_element = last_url_elemen(request)
+    if request.method == "POST":
+        form = AbcForm(request.POST)
+        print(form)
+        if form.is_valid():
+            print("\n\nform valid")
+            # form =  AbcForm(initial={"c": 0})
+            print(form)
+            form_dict = form.cleaned_data
+            print(form_dict)
+            a = form_dict['a']
+            b = form_dict['b']
+            c = form_dict['c']
+            print("a,b,c:", a,b,c)
+            result = solution(a, b, c) 
+            context = {'form': form, 'result': result, 'last_url_element':last_url_element}
+            return render(request, 'abc_form_post.html', context) 
+    else:
+        form = AbcForm()
+        print(form)
+        context = {'form': form, 'last_url_element':last_url_element}
+        return render(request, 'abc_form_post.html', context) 
+
+
+
+
+
 
 def store(request):
-    last_url_element = def_url_elements(request)
+    last_url_element = last_url_elemen(request)
     objects_array = [
         {
             "id": "1",
@@ -112,7 +143,7 @@ def store(request):
         }
     ]
     dict_of_array = {'objects_array': objects_array}
-    context = {'urls': last_url_element,
+    context = {'last_url_element':last_url_element,
                'dict_of_array': dict_of_array}
     print(context)
     return render(request, "store.html", context)
