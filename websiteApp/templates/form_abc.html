@@ -9,21 +9,20 @@
 {% block main %}
     <div id="pk">{{ last_url_element }}</div>
     <h5 class="card-title text-center">Form ABC</h5>
-    <p>Принадлежит ли целое С диапазону A-B? Если принадлежит - отправить все на сервер</p>
     <form action="{% url 'websiteApp:form_get_all' %}" id="UserEnter" name="UserEnter" target="_blank">
         <ul class="list-group">
-            <li class="list-group-item disabled"><input name="cоntent" type="hidden"></li>
+            <li class="list-group-item "><label>Задача: </label><textarea id="content" name="content"> Принадлежит ли целое С диапазону A-B? Если принадлежит - отправить все на сервер </textarea></li>
             <li class="list-group-item"><label>A: </label><input id="a" name="a" type="number" value=10></li>
-            <li class="list-group-item"><label>B: </label><input id="b" name="b" type="number" value=20></label></li>
-            <li class="list-group-item"><label>C: </label><input id="c" name="c" type="number" value=19></label></li>
-            <li class="list-group-item disabled"></label><input name="result" type="hidden"value=""></li>
-            <li class="list-group-item"><label></label><input id="verify" type="button" value="Проверить"></label></li>
-            <li class="list-group-item"><label></label><input id="send" type="button" value="Отправить"></label></li>
+            <li class="list-group-item"><label>B: </label><input id="b" name="b" type="number" value=20></li>
+            <li class="list-group-item"><label>C: </label><input id="c" name="c" type="number" value=19></li>
+            <li class="list-group-item"><label>Результат: </label><textarea id="result" name="result"></textarea></li>
+            <li class="list-group-item"><label></label><p    id="verify" type="button" class="btn btn-primary">Проверить</p></li>
+            <li class="list-group-item"><label></label><p id="send" type="button" class="btn btn-primary">Отправить</p></li>
         </ul>
     </form>
-    <p id="result">Результаты вычислений: </p>
     {% load static %}
-    <script src="{% static 'js/form_abc.js' %}"></script>
+    <script src="{% static 'websiteApp/js/form_abc.js' %}"></script>
 {% endblock %}
+
 
 

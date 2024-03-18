@@ -8,15 +8,12 @@
     {% endblock %}
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet" />
     {% load static %}
-    <link href="{% static 'css/mycss.css' %}" rel="stylesheet" />
+    <link href="{% static 'websiteApp/css/mycss.css' %}" rel="stylesheet" />
   </head>
 
   <body>
     <div class="container">
-      <div class="card">
-        <div class="card-body bg-color">
-          <h5 class="card-title">CTRL+F5<br />common+shift+R</h5>
-          <img src="{% static 'images/settings_django.png' %}" height="30px" />
+          <img src="{% static 'websiteApp/images/settings_django.png' %}>
         </div>
       </div>
 
@@ -39,7 +36,7 @@
       </div>
     </div>
 
-    <script src="{% static 'js/navigation.js' %}"></script>
+    <script src="{% static 'websiteApp/js/navigation.js' %}"></script>
     <script crossorigin="anonymous" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+*{
+    }
 .bg-color {
     background-color: red;
     background-image: url(../images/engine.jpg);
@@ -6,50 +8,60 @@
     background-position: center;
 }
 
+div {
+    width: 100%;
 
-div{
-width: 100%; 
-padding-top: 1.0rem;   
 }
-.main {
+
+.list-group li {
     /*Контейнер*/
     display: flex;
     /*главная ось*/
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content:flex-start;
     /*поперечная ось */
-    align-items: flex-start;
-    width: 100%;
+    align-items:center;
 }
 
-.section {
+
+.section div {
     /*Контейнер*/
     display: flex;
     /*главная ось*/
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content:flex-start;
     /*поперечная ось */
-    align-items: flex-start;
-    width: 100%;
+    align-items:center;
+}
+
+tr {
+    /*Контейнер*/
+    display: flex;
+    /*главная ось*/
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+    /*поперечная ось */
+    align-items:center;
 }
 
 label {
     display: inline-table;
     line-height: 1.0rem;
-    width: 18%;    
 }
 
-input,textarea {
+input,textarea,td {
     display: ininline-table;
-    resize: horizontal; 
-    padding: 1.0rem;   
+    resize: horizontal;
+    margin: 0.5rem;
     height: 3.0rem;
-}
+    width:100%
+    }
 
 
-table {
+table, div {
     width: 100%;
 }
 
@@ -61,8 +73,6 @@ th {
 td {
     width: -webkit-fill-available;
 }
-
-
 
 a:hover {
     text-decoration: underline;

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    
+    <title>Form ABC</title>
+
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet" />
+    
+    <link href="/static/websiteApp/css/mycss.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body bg-color">
+          <h5 class="card-title">CTRL+F5<br />common+shift+R</h5>
+          <img src="/static/websiteApp/images/settings_django.png" height="30px" />
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+              
+    <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item"><a id="home" class="nav-link" href="/websiteApp/home/">home</a></li>
+        
+        <li class="nav-item"><a id="form_abc" class="nav-link" href="/websiteApp/form_abc/">form_abc</a></li>
+
+        <li class="nav-item"><a id="abc_form_get" class="nav-link" href="/websiteApp/abc_form_get/">abc_form_get</a></li>
+        
+        <li class="nav-item"><a id="abc_form_post" class="nav-link" href="/websiteApp/abc_form_post/">abc_form_post</a></li>
+        
+        <li class="nav-item"><a id="store" class="nav-link" href="/websiteApp/store/">store</a></li>
+    </ul>
+
+    <ul class="nav nav-tabs card-header-tabs">
+        
+        <li class="nav-item"><a class=" nav-link  " href="/websiteApp/home/">home</a></li>
+
+        <li class="nav-item"><a class=" nav-link active  " href="/websiteApp/form_abc/">form_abc</a></li>
+        
+        <li class="nav-item"><a class=" nav-link  " href="/websiteApp/abc_form_get/">abc_form_get</a></li>
+        
+        <li class="nav-item"><a class=" nav-link  " href="/websiteApp/abc_form_post/">abc_form_post</a></li>
+
+        <li class="nav-item"><a class=" nav-link  " href="/websiteApp/store/">store</a></li>
+    </ul>
+
+        </div>
+
+        <div class="card-body">
+          
+    <div id="pk">form_abc</div>
+    <h5 class="card-title text-center">Form ABC</h5>
+    <p>Принадлежит ли целое С диапазону A-B? Если принадлежит - отправить все на сервер</p>
+    <form action="/websiteApp/form_get_all/" id="UserEnter" name="UserEnter" target="_blank">
+        <ul class="list-group">
+            <li class="list-group-item disabled"><input name="cоntent" type="hidden"></li>
+            <li class="list-group-item"><label>A: </label><input id="a" name="a" type="number" value=10></li>
+            <li class="list-group-item"><label>B: </label><input id="b" name="b" type="number" value=20></label></li>
+            <li class="list-group-item"><label>C: </label><input id="c" name="c" type="number" value=19></label></li>
+            <li class="list-group-item disabled"></label><input name="result" type="hidden"value=""></li>
+            <li class="list-group-item"><label></label><input id="verify" type="button" value="Проверить"></label></li>
+            <li class="list-group-item"><label></label><input id="send" type="button" value="Отправить"></label></li>
+        </ul>
+    </form>
+    <p id="result">Результаты вычислений: </p>
+    
+    <script src="/static/websiteApp/js/form_abc.js"></script>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Контакты и др.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/navigation.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

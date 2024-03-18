@@ -115,7 +115,7 @@ def store(request):
             "vendor_code": "VC111",
             "description": "Описание 1",
             "price": 100,
-            "img": "/images/uso_001.jpg"
+            "img": "websiteApp/images/uso_001.jpg"
         },
         {
             "id": "2",
@@ -123,7 +123,7 @@ def store(request):
             "vendor_code": "VC222",
             "description": "Описание 2",
             "price": 200,
-            "img": "/images/uso_002.jpg"
+            "img": "websiteApp/images/uso_002.jpg"
         },
         {
             "id": "3",
