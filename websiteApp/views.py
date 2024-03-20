@@ -53,10 +53,10 @@ def solution(a, b, c):
 def abc_form_get(request):
     last_url_element = last_url_elemen(request)
     form = AbcForm(request.GET)
+    print("\n\nform\n", form)
     if form.is_valid():
         print("\n\nform is valid")
         # form =  AbcForm(initial={"c": 0})
-        print(form)
         form_dict = form.cleaned_data
         print(form_dict)
         a = form_dict['a']
