@@ -13,6 +13,9 @@ div {
 
 }
 
+th {
+    font-weight:normal;
+}
 .list-group li {
     /*Контейнер*/
     display: flex;

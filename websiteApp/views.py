@@ -35,11 +35,7 @@ def form_get_all(request):
     context = {'items_dict': items_dict, 'last_url_element':last_url_element}
     return render(request, 'context.html', context) 
 
-    # return HttpResponse(f"""
-    # {values_list}
-    # </pre>
-    # """)
-
+  
 
 def form_abc(request):
     last_url_element = last_url_elemen(request)
@@ -93,12 +89,12 @@ def abc_form_post(request):
             c = form_dict['c']
             print("a,b,c:", a,b,c)
             result = solution(a, b, c) 
-            context = {'form': form, 'result': result, 'last_url_element':last_url_element}
+            context = {'form_post': form, 'result': result, 'last_url_element':last_url_element}
             return render(request, 'abc_form_post.html', context) 
     else:
         form = AbcForm()
         print(form)
-        context = {'form': form, 'last_url_element':last_url_element}
+        context = {'form_post': form, 'last_url_element':last_url_element}
         return render(request, 'abc_form_post.html', context) 
 
 

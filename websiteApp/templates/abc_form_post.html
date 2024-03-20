@@ -9,15 +9,20 @@
   <h5 class="card-title text-center">POST. Создаем и обновляем форму</h5>
   <div class="card">
     <div class="card-body">
-        <form action="{% url 'websiteApp:abc_form_post' %}" method="post">
+      <form action="{% url 'websiteApp:abc_form_post' %}" method="post">
         {% csrf_token %}
-            <table>
-            {{ form }}
-            <tr>
-            <th><label for="id_submit"></label></th>
-            <td><button type="submit" class="btn btn-primary" id="id_submit">Вычислить</button><td>
+        <table>
+          {{ form_post }}
+          <tr>
+            <th>
+              <label for="id_submit"></label>
+            </th>
+            <td>
+              <button type="submit" class="btn btn-primary" id="id_submit">Вычислить</button>
+            </td>
+          </tr>
         </table>
-    </form>
+      </form>
     </div>
   </div>
   {% if result %}
