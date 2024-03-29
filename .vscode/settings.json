@@ -42,7 +42,7 @@
     //     "wagtail"
     // ],
   "[django-html]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "junstyle.vscode-django-support"
   },
     // "[django-html]": {
