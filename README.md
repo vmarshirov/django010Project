@@ -90,9 +90,9 @@ mkdir project01
 
 cd project01
 
-python -m venv env
+python -m venv .venv
 
-env\Scripts\activate
+.venv\Scripts\activate
 
 Если возникли проблемы:
 
@@ -104,9 +104,11 @@ env\Scripts\activate
 
 Продолжаем: 
 
-python -m venv env
+python -m venv .venv
 
-env\Scripts\activate
+.venv\Scripts\activate
+
+pip list
 
 python -m pip install --upgrade pip
 
@@ -131,11 +133,9 @@ pip freeze > requirements.txt
 
 ### Конфигурирование и запуск после извлечения архива
 
-python -m venv env
+python -m venv .venv
 
-env\Scripts\activate
-
-python -m pip install --upgrade pip
+.venv\Scripts\activate
 
 pip list
 
