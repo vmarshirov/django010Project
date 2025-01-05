@@ -22,7 +22,7 @@ https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-e
 
 ### Для Windows: 
 
-Запускаем powershel или cmd
+Запускаем powershel (поиск - powershel) или cmd (поиск - командная строка или windows+R  затем cmd)
 
 mkdir project01
 
@@ -43,7 +43,6 @@ Set-ExecutionPolicy RemoteSigned
 
 Продолжаем: 
 
-python -m venv .venv
 
 .venv\Scripts\activate
 
