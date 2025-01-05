@@ -101,7 +101,7 @@ python -m venv .venv
 Set-ExecutionPolicy RemoteSigned 
 
 
-Вариант 2. Открываем cmd
+Вариант 2. Открываем cmd (windows+R)
 
 Продолжаем: 
 
