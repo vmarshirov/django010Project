@@ -128,7 +128,7 @@ pip install --upgrade pip
 
 pip list
 
-py -m pip install Django или  pip install -U django==8.0.4 или (если восстанавливаем из архива) pip install -r requirements.txt  
+pip install Django или  pip install -U django==8.0.4 или (если восстанавливаем из архива) pip install -r requirements.txt  
 
 pip list
 
