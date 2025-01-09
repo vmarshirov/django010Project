@@ -56,14 +56,27 @@ py -m
 
 pip install Django или  pip install -U django==8.0.4
 
+django-admin startproject project01 ../project01
+
+pip freeze > requirements.txt
+
+python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
+
+Ctrl + C
+
+deactivate
+
+
 Если восстанавливаем из архива) 
+
+python -m venv .venv
+
+.venv\Scripts\activate
+
 
 pip install -r requirements.txt  
 
-
 pip list
-
-django-admin startproject project01 ../project01
 
 dir
 
@@ -74,7 +87,7 @@ Ctrl + C
 
 deactivate
 
-pip freeze > requirements.txt
+
 
 ### Конфигурирование и запуск после извлечения архива
 
@@ -107,9 +120,9 @@ mkdir project01
 
 cd project01
 
-python3 -m venv env
+python3 -m venv .venv
 
-. env/bin/activate
+. .venv/bin/activate
 
 pip install --upgrade pip
 
@@ -119,11 +132,11 @@ py -m pip install Django или  pip install -U django==8.0.4 или (если �
 
 pip list
 
-pip freeze > requirements.txt
-
 django-admin startproject project01 ../project01
 
-dir
+pip freeze > requirements.txt
+
+ls
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
@@ -141,9 +154,9 @@ deactivate
 
 cd project01
 
-python3 -m venv env
+python3 -m venv .venv
 
-. env/bin/activate
+. .venv/bin/activate
 
 pip install --upgrade pip
 
