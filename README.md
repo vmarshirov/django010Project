@@ -28,6 +28,7 @@ mkdir project01
 
 cd project01
 
+
 python -m venv .venv
 
 .venv\Scripts\activate
@@ -120,6 +121,8 @@ mkdir project01
 
 cd project01
 
+ls -laF
+
 python3 -m venv .venv
 
 . .venv/bin/activate
@@ -134,9 +137,11 @@ pip list
 
 django-admin startproject project01 ../project01
 
+ls -laF
+
 pip freeze > requirements.txt
 
-ls
+ls -laF
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
