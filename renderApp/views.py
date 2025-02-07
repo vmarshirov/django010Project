@@ -112,7 +112,8 @@ def objects_arrays(request):
         {"title": "Название 1", "description": "Описание 1", "img": "renderApp/images/1_1.png"},
         {"title": "Название 2", "description": "Описание 2", "img": "renderApp/images/1_2.png"},
     ]
-
+    print("goods_array: " ,goods_array)
+    print ("box_array: ", box_array)
     dict_of_array = {"goods_array": goods_array, "box_array": box_array}
     context = {"dict_of_array": dict_of_array}
     print("context: ", context)
