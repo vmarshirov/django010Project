@@ -1,12 +1,24 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-  <title>Решение алготитмической задачиk</title>
+  <title>Решение задачи</title>
 {% endblock %}
 
 {% block main %}
-  <h3>Решение алготитмической задачи</h3>
-  <p>Формулировка: {{ formulation_value }}</p>
-  <p>Значение переменной a : {{ a_value }}</p>
-  <p>Результат : {{ result_value }}</p>
+  <h3>Решение задачи</h3>
+  <p>
+  <h5>Номер и формулировка задачи:</h5>
+  {{ formulation_value }}</p>
+  </P>
+
+  <p>
+  <h5>Значения переменных</h5>
+  a = {{ a_value }}</p>
+  </p>
+
+  <p>
+  <h5>Ответ</h5>
+  {{ result_value }}
+  </p>
+
 {% endblock %}

@@ -6,33 +6,36 @@ from django.shortcuts import render, redirect
 # https://docs.python.org/3/library/stdtypes.html#index-51
 
 
-def index(request):  # http://127.0.0.1:8000/renderApp/
+""" def index(request):  # http://127.0.0.1:8000/renderApp/
     return render(request, "index.html")
+ """
 
+def index(request):  # http://127.0.0.1:8000/renderApp/greet/Иванов
+    path_value = "Привет"
+    return render(request, "greet.html", {"key": path_value})
 
-def greet(request, value):  # http://127.0.0.1:8000/renderApp/greet/Иванов
-    print(value)
-    print(request.__dir__())
-    print(request.GET)
-    return render(request, "greet.html", {"key": value})
+def greet(request, path_value):  # http://127.0.0.1:8000/renderApp/greet/Иванов
+    print(path_value)
+    context = {"key": path_value}
+    return render(request, "greet.html", context)
 
 
 def page_01(request, path_value):  # http://127.0.0.1:8000/renderApp/page_01/id/page/010
-    print(path_value)
+    print("path_value: ", path_value)
     print(request.path)
     context = {"path_value": path_value}
     return render(request, "page_01.html", context)
 
 
 def page_02(request, path_value):  # http://127.0.0.1:8000/renderApp/page_02/id/page/020
-    print(path_value)
+    print("path_value: ", path_value)
     print(request.path)
     context = {"path_value": path_value}
     return render(request, "page_02.html", context)
 
 
 def pages(request, path_value):  # http://127.0.0.1:8000/renderApp/pages/01
-    print(path_value)
+    print("path_value: ", path_value)
     print(request.path)
     context = {"path_value": path_value}
     if path_value == "first":
@@ -43,25 +46,26 @@ def pages(request, path_value):  # http://127.0.0.1:8000/renderApp/pages/01
     else:
         return redirect("renderApp:page_01", path_value)
 
-
-def task(request, path_value):
-    print(path_value)
-    print("request.path: ", request.path)
-    request_path_elements = request.path.split("/")
-    print("request_path_elements:", request_path_elements)
-    print("request_path_elements.__len__():", request_path_elements.__len__())
-    path_len = request_path_elements.__len__()
-    formulation_value = request_path_elements[path_len - 2]
-    a_value = int(request_path_elements[path_len - 1])
-    print("a_value: ", a_value)
+def task_solution(a_value):
     if a_value > 0:
         result_value = "a > 0"
     else:
         result_value = "a <= 0"
+    return result_value
 
+def task(request, path_value):
+    print("path_value: ", path_value)
+    #print("request.path: ", request.path)
+    path_elements = path_value.split("/")
+    print ("path_elements: ", path_elements)
+    list_a =  path_elements[0].split("=")
+    int_a = int(list_a[1])
+    print("int_a: ", int_a)
+    result_value = task_solution(int_a)
+    formulation_value = "2001. Значение переменной  а больше нуля ?"
     context = {
         "formulation_value": formulation_value,
-        "a_value": a_value,
+        "a_value": int_a,
         "result_value": result_value,
     }
     print("context: ", context)
@@ -76,7 +80,7 @@ def objects_arrays(request):
             "vendor_code": "VC111",
             "description": "Описание 1",
             "price": 100,
-            "img": "/images/uso_001.jpg",
+            "img": "renderApp/images/uso_001.jpg",
         },
         {
             "id": "2",
@@ -84,7 +88,7 @@ def objects_arrays(request):
             "vendor_code": "VC222",
             "description": "Описание 2",
             "price": 200,
-            "img": "/images/uso_002.jpg",
+            "img": "renderApp/images/uso_002.jpg",
         },
         {
             "id": "3",
@@ -105,8 +109,8 @@ def objects_arrays(request):
     ]
 
     box_array = [
-        {"title": "Название 1", "description": "Описание 1", "img": "/images/1_1.png"},
-        {"title": "Название 2", "description": "Описание 2", "img": "/images/1_2.png"},
+        {"title": "Название 1", "description": "Описание 1", "img": "renderApp/images/1_1.png"},
+        {"title": "Название 2", "description": "Описание 2", "img": "renderApp/images/1_2.png"},
     ]
 
     dict_of_array = {"goods_array": goods_array, "box_array": box_array}

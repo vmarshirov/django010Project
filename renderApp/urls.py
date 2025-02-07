@@ -19,7 +19,7 @@ from . import views
 app_name = "renderApp"
 urlpatterns = [
     path("", views.index, name="index"),
-    path("greet/<str:value>", views.greet, name="greet"),
+    path("greet/<str:path_value>", views.greet, name="greet"),
     path("page_01/<path:path_value>", views.page_01, name="page_01"),
     path("page_02/<path:path_value>", views.page_02, name="page_02"),
     path("pages/<path:path_value>", views.pages, name="pages"),

@@ -1,8 +1,9 @@
 function verify() {
-    let a = parseInt(document.getElementsByTagName("input")[1].value);
-    let b = parseInt(document.getElementsByTagName("input")[2].value);
-    let c = parseInt(document.getElementsByTagName("input")[3].value);
-    console.log(a, b, c)
+    let content = document.getElementById("content").value;
+    let a = parseInt(document.getElementById("a").value);
+    let b = parseInt(document.getElementById("b").value);
+    let c = parseInt(document.getElementById("c").value);
+    console.log("\n\n a, b, c: ", a, b, c)
 
     let low, high
     if (a < b) {
@@ -15,21 +16,20 @@ function verify() {
 
     if (c >= low && c <= high) {
         result = " С принадлежит заданному диапазону"
-        document.getElementById("result").innerText = messageText + result;
+        document.getElementById("result").value = messageText + result;
         check = true;
     } else {
         result = " С не принадлежит заданному диапазону"
-        document.getElementById("result").innerText = messageText + result;
+        document.getElementById("result").value = messageText + result;
         check = false;
     }
+    console.log("\n\nresult: ", result)
 }
 
 function send() {
-    verify();
     if (check) {
-        let textCondition = document.getElementsByTagName('p')[0].innerText
-        document.getElementsByName('cоntent')[0].value = textCondition;
-        document.getElementsByName('result')[0].value = result;
+        document.getElementById('result').value = result;
+        document.getElementById("result").innerText
         document.getElementById("UserEnter").submit();
     } else {
         alert("Есть недостатки. Повторите ввод")
@@ -40,6 +40,7 @@ function verify_send() {
     verify();
     send();
 }
+
 
 
 let messageText = document.getElementById("result").innerText

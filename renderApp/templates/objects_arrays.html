@@ -5,10 +5,9 @@
 {% endblock %}
 
 {% block main %}
-  {% load static %}
+{% load static %}
+
   <h5 class="card-title text-center">Массивы объектов</h5>
-  {# path_element: {{path_element.path_element}} #}
-  {# <br>objects_array: {{objects_array.objects_array}} #}
 
   <div class="card">
     <div class="card-body">
@@ -26,17 +25,15 @@
 
     <h5 class="card-title text-center">Другие массивы</h5>
     <div class="card-body">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Название</th>
-            <th scope="col">Изображение</th>
-            <th scope="col">Описание</th>
-          </tr>
-        </thead>
+      <table class="table, border">
         <tbody>
+          <tr class="border">
+            <td>Название</td>
+            <td>Изображение</td>
+            <td>Описание</td>
+          </tr>
           {% for object in dict_of_array.box_array %}
-            <tr>
+            <tr class="border">
               <td>{{ object.title }}</td>
               <td>
                 <img src="{% static object.img %}" width="200px>" />

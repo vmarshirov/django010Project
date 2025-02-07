@@ -8,7 +8,7 @@ import datetime
 
 def index(request):
     # http://127.0.0.1:8000/responseApp/
-    return HttpResponse("responseApp")
+    return HttpResponse("responseApp1")
 
 
 def html(request):
@@ -49,25 +49,23 @@ def f_str_int_slug(request, str_value, int_value, slug_value):
 
 
 def f_path(request, path_value):
-    # http://127.0.0.1:8000/responseApp/f_path/building/your-1st/django-site
+    # http://127.0.0.1:8000/responseApp/f_path/building/your-1st/x=1
     print("path_value: ", path_value)
     path_elements = path_value.split("/")
-    print(path_elements)
-    path_elements_amount = path_elements.__len__()
-    print(path_elements_amount)
-
-    print(dir(request))
-    print("request.path: ", request.path)
-    request_path_elements = request.path.split("/")
-    print("request_path_elements:", request_path_elements)
-    request_elements_amount = request_path_elements.__len__()
-    print(request_elements_amount)
-    last_request_path_element = request_path_elements[
-        request_elements_amount - path_elements_amount - 1
-    ]
-    print(last_request_path_element)
-    return HttpResponse(f"last_request_path_element: {last_request_path_element}")
-
+    print("path_elements:", path_elements)
+    x = (path_elements[2].split("="))[1]
+    print("x: ",x)  
+    # path_elements_amount = path_elements.__len__()
+    # print("path_elements_amount", path_elements_amount)
+    # print(dir(request))
+    # print("request.path: ", request.path)
+    # request_path_elements = request.path.split("/")
+    # print("request_path_elements:", request_path_elements)
+    # request_elements_amount = request_path_elements.__len__()
+    # print(request_elements_amount)
+    # last_request_path_element = request_path_elements[request_elements_amount  - 1 ]
+    # print(last_request_path_element)
+    return HttpResponse(f"x:  {x}")
 
 # Заметки на будущее
 # Передать несколько переменых и произвести вычисления

@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>renderApp</title>
-  </head>
+{% extends 'layout.html' %}
 
-  <body>
-    <p>Привет, {{ key }}</p>
-  </body>
-</html>
+{% block title %}
+  <title>Приветствие</title>
+{% endblock %}
+
+{% block main %}
+  <h3>Приветствие из views </h3>
+  {{ key }}
+{% endblock %}
