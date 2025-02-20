@@ -5,20 +5,20 @@
 {% endblock %}
 
 {% block main %}
+  <p>
   <h3>Решение задачи</h3>
   <p>
-  <h5>Номер и формулировка задачи:</h5>
-  {{ formulation_value }}</p>
-  </P>
-
-  <p>
-  <h5>Значения переменных</h5>
-  a = {{ a_value }}</p>
+    <h5>Номер и формулировка задачи:</h5>
+    {{ formulation_value }}
   </p>
 
   <p>
-  <h5>Ответ</h5>
-  {{ result_value }}
+    <h5>Значения переменных</h5>
+    a = {{ a_value }}
   </p>
 
+  <p>
+    <h5>Ответ</h5>
+    {{ result_value }}
+  </p>
 {% endblock %}
