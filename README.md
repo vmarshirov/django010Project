@@ -204,7 +204,8 @@ git pull origin main
 
 
 ### Редирект порта для сервера
-iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8000
+
+sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080
 
 ### Готовим новую конфигурацию 
 
