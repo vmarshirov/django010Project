@@ -24,12 +24,15 @@ https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-e
 
 Запускаем powershel (поиск - powershel) или cmd (поиск - командная строка или windows+R  затем cmd)
 
-mkdir project01
+mkdir fio_project
 
-cd project01
+cd fio_project
 
 
 python -m venv .venv
+
+
+ls
 
 .venv\Scripts\activate
 
@@ -49,15 +52,22 @@ Set-ExecutionPolicy RemoteSigned
 
 pip list
 
+deactivate
+
 python -m pip install --upgrade pip
 
 pip list
 
 py -m 
 
-pip install Django или  pip install -U django==8.0.4
+pip install Django 
 
-django-admin startproject project01 ../project01
+или  
+
+pip install -U django==8.0.4
+
+
+django-admin startproject fio_project ./
 
 pip freeze > requirements.txt
 
