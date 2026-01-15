@@ -53,8 +53,6 @@ python -m pip install --upgrade pip
 
 pip list
 
-py -m 
-
 pip install Django 
 
 или  
@@ -93,6 +91,11 @@ apt-get update
 apt install python3 -venv
 
 ### для MacOs, использовать терминал
+ls -laF
+
+mkdir django
+
+cd django
 
 mkdir fio_project
 
@@ -110,6 +113,9 @@ pip install Django или  pip install -U django==8.0.4
 
 
 django-admin startproject fio_project ./
+
+
+ls -laF
 
 pip freeze > requirements.txt
 
