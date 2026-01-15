@@ -16,10 +16,6 @@ https://pip.pypa.io/en/stable/
 https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
 
 
-
-## django010Project
-
-
 ### Для Windows: 
 
 Запускаем powershel (поиск - powershel) или cmd (поиск - командная строка или windows+R  затем cmd)
@@ -30,7 +26,6 @@ cd fio_project
 
 
 python -m venv .venv
-
 
 ls
 
@@ -88,31 +83,16 @@ python -m venv .venv
 
 pip install -r requirements.txt  
 
-pip list
-
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
-Ctrl + C
-
-deactivate
-
-
-
-### Конфигурирование и запуск после извлечения архива
-
-python -m venv .venv
-
-.venv\Scripts\activate
-
-pip install -r requirements.txt
-
-python manage.py runserver 
 
 ### для не Windows, использовать терминал
 
 apt-get update
 
 apt install python3 -venv
+
+### для MacOs, использовать терминал
 
 mkdir fio_project
 
@@ -126,8 +106,7 @@ python3 -m venv .venv
 
 pip list
 
-pip install Django или  pip install -U django==8.0.4 или (если восстанавливаем из архива) pip install -r requirements.txt  
-
+pip install Django или  pip install -U django==8.0.4 
 
 
 django-admin startproject fio_project ./
@@ -142,22 +121,9 @@ Ctrl + C
 
 deactivate
 
-ls -laF
-
-python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
-
 Ctrl + C
 
-## Полезно для всех
-
-редактируем /settings.py
-
-ALLOWED_HOSTS = ["*"],
-
-
-
 #### Разворачиваем из архива 
-
 
 python3 -m venv .venv
 
@@ -168,6 +134,14 @@ pip list
 pip install -r requirements.txt
 
 python manage.py runserver
+
+
+## Полезно для всех
+
+редактируем /settings.py
+
+ALLOWED_HOSTS = ["*"],
+
 
 
 ### При необходимости когда начнем работать с моделями
