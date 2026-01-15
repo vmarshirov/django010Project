@@ -71,6 +71,8 @@ django-admin startproject fio_project ./
 
 pip freeze > requirements.txt
 
+pip install -r requirements.txt 
+
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
 Ctrl + C
@@ -84,13 +86,9 @@ python -m venv .venv
 
 .venv\Scripts\activate
 
-
 pip install -r requirements.txt  
 
 pip list
-
-dir
-
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
@@ -106,50 +104,43 @@ python -m venv .venv
 
 .venv\Scripts\activate
 
-pip list
-
 pip install -r requirements.txt
-
-pip list
 
 python manage.py runserver 
 
 ### для не Windows, использовать терминал
 
- 
-su
-
 apt-get update
 
 apt install python3 -venv
 
-exit
+mkdir fio_project
 
-cd
-
-mkdir project01
-
-cd project01
+cd fio_project
 
 ls -laF
 
 python3 -m venv .venv
 
-. .venv/bin/activate
-
-pip install --upgrade pip
+. .venv/bin/activate или source venv/bin/activate 
 
 pip list
 
 pip install Django или  pip install -U django==8.0.4 или (если восстанавливаем из архива) pip install -r requirements.txt  
 
-pip list
 
-django-admin startproject project01 ../project01
 
-ls -laF
+django-admin startproject fio_project ./
 
 pip freeze > requirements.txt
+
+pip install -r requirements.txt 
+
+python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
+
+Ctrl + C
+
+deactivate
 
 ls -laF
 
@@ -157,30 +148,26 @@ python manage.py runserver или (если уникальный ip)  python man
 
 Ctrl + C
 
-редактируем project01/settings.py
+## Полезно для всех
+
+редактируем /settings.py
 
 ALLOWED_HOSTS = ["*"],
 
-python manage.py runserver 127.0.0.1:80
 
-deactivate
 
 #### Разворачиваем из архива 
 
-cd project01
 
 python3 -m venv .venv
 
 . .venv/bin/activate
-
-pip install --upgrade pip
 
 pip list
 
 pip install -r requirements.txt
 
 python manage.py runserver
-
 
 
 ### При необходимости когда начнем работать с моделями
@@ -211,13 +198,7 @@ git pull origin main
 
 
 
-
-
 ### Редирект порта для сервера
 
 sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080
-
-### Готовим новую конфигурацию 
-
-pip freeze > requirements.txt
 
