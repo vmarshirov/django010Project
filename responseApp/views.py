@@ -1,6 +1,6 @@
-from django.http import HttpResponse
 import datetime
 
+from django.http import HttpResponse
 
 # https://docs.djangoproject.com/en/4.1/topics/http/urls/
 # https://docs.djangoproject.com/en/4.1/topics/http/views/
@@ -8,20 +8,37 @@ import datetime
 
 def index(request):
     # http://127.0.0.1:8000/responseApp/
-    return HttpResponse("responseApp1")
+    return HttpResponse("responseApp")
 
 
 def html(request):
     # http://127.0.0.1:8000/responseApp/html/
     now = datetime.datetime.now()
-    html = "<html><body>Сейчас %s.</body></html>" % now
-    return HttpResponse(html)
-    # return HttpResponse(f"<html><body>It is now {now}.</body></html>")
+    # html = "<html><body>Сейчас %s.</body></html>" % now
+    # return HttpResponse(html)
+    return HttpResponse(f"<html><body>It is now {now}.</body></html>")
+
+
+def calculate_get(request):
+    # Получаем параметры x и y из строки запроса (GET)
+    # http://127.0.0.1:8000/responseApp/calculate?x=1&y=2
+    print(request)
+    x_str = request.GET.get("x", "0")
+    y_str = request.GET.get("y", "0")
+
+    try:
+        x = float(x_str)
+        y = float(y_str)
+        z = x + y
+        result = f"<h1>Калькулятор GET</h1><p>x = {x}</p><p>y = {y}</p><h2>z = x + y = {z}</h2>"
+    except ValueError:
+        result = "<h1>Ошибка</h1><p>Пожалуйста, передайте числовые значения для x и y в строке запроса. Пример: <code>?x=10&y=5</code></p>"
+    return HttpResponse(result)
 
 
 def f_str(request, str_value):
     # http://127.0.0.1:8000/responseApp/f_str/abc
-    print("str_value: ",  str_value)
+    print("str_value: ", str_value)
 
     return HttpResponse(f"<p>f_str, str_value:  {str_value}</p>")
 
@@ -54,7 +71,7 @@ def f_path(request, path_value):
     path_elements = path_value.split("/")
     print("path_elements:", path_elements)
     x = (path_elements[2].split("="))[1]
-    print("x: ",x)  
+    print("x: ", x)
     # path_elements_amount = path_elements.__len__()
     # print("path_elements_amount", path_elements_amount)
     # print(dir(request))
@@ -66,6 +83,7 @@ def f_path(request, path_value):
     # last_request_path_element = request_path_elements[request_elements_amount  - 1 ]
     # print(last_request_path_element)
     return HttpResponse(f"x:  {x}")
+
 
 # Заметки на будущее
 # Передать несколько переменых и произвести вычисления

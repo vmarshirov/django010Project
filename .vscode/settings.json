@@ -1,59 +1,43 @@
+// .vscode/settings.json
 {
-    "python.languageServer": "Default",
-    "python.analysis.diagnosticMode": "openFilesOnly",
-    "python.analysis.autoSearchPaths": true,
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.completeFunctionParens": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.importFormat": "absolute",
-    "python.analysis.enablePytestSupport": true,
-    "python.analysis.indexing": true,
-    "python.analysis.packageIndexDepths": [
-        {
-            "name": "django",
-            "depth": 3,
-            "includeAllSymbols": true
-        }
+    // Python настройки
+    "python.languageServer": "Pylance",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--django-settings-module=your_project.settings"
     ],
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
+    // Django специфичные настройки
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}"
+    ],
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
-    
     "emmet.includeLanguages": {
         "django-html": "html"
     },
-
-    // "files.associations": {
-    // "**/views/**/*.html": "django-html",
-    // "*.tpl": "django-html"
-    // },
-
-    "files.associations": {
-        "**/*/templates/*.html": "django-html",
-        "**/templates/*/*.html": "django-html",
-        "**/templates/*/*/*.html": "django-html",
-        "**/views/**/*.html": "django-html",
-        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    // Автосохранение и форматирование
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
     },
-
-    // "django.snippets.exclude": [
-    //     "cms",
-    //     "wagtail"
-    // ],
-  "[django-html]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": "junstyle.vscode-django-support"
-  },
-    // "[django-html]": {
-    //     "editor.defaultFormatter": "junstyle.vscode-django-support",
-    //     "breadcrumbs.showClasses": true,
-    //     "editor.quickSuggestions": {
-    //         "other": true,
-    //         "comments": true,
-    //         "strings": true
-    //     }
-    // },
-
-    "python.analysis.typeCheckingMode": "basic",
+    // Исключения из поиска
+    "files.exclude": {
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/db.sqlite3": false
+    },
+    // Отладка
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ]
 }
