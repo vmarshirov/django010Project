@@ -16,20 +16,18 @@ https://pip.pypa.io/en/stable/
 https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
 
 
-
-## django010Project
-
-
 ### Для Windows: 
 
 Запускаем powershel (поиск - powershel) или cmd (поиск - командная строка или windows+R  затем cmd)
 
-mkdir project01
+mkdir fio_project
 
-cd project01
+cd fio_project
 
 
 python -m venv .venv
+
+ls
 
 .venv\Scripts\activate
 
@@ -49,17 +47,24 @@ Set-ExecutionPolicy RemoteSigned
 
 pip list
 
+deactivate
+
 python -m pip install --upgrade pip
 
 pip list
 
-py -m 
+pip install Django 
 
-pip install Django или  pip install -U django==8.0.4
+или  
 
-django-admin startproject project01 ../project01
+pip install -U django==8.0.4
+
+
+django-admin startproject fio_project ./
 
 pip freeze > requirements.txt
+
+pip install -r requirements.txt 
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
@@ -74,102 +79,74 @@ python -m venv .venv
 
 .venv\Scripts\activate
 
-
 pip install -r requirements.txt  
-
-pip list
-
-dir
-
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
-Ctrl + C
-
-deactivate
-
-
-
-### Конфигурирование и запуск после извлечения архива
-
-python -m venv .venv
-
-.venv\Scripts\activate
-
-pip list
-
-pip install -r requirements.txt
-
-pip list
-
-python manage.py runserver 
 
 ### для не Windows, использовать терминал
-
- 
-su
 
 apt-get update
 
 apt install python3 -venv
 
-exit
+### для MacOs, использовать терминал
+ls -laF
 
-cd
+mkdir django
 
-mkdir project01
+cd django
 
-cd project01
+mkdir fio_project
+
+cd fio_project
 
 ls -laF
 
 python3 -m venv .venv
 
-. .venv/bin/activate
-
-pip install --upgrade pip
+. .venv/bin/activate или source venv/bin/activate 
 
 pip list
 
-pip install Django или  pip install -U django==8.0.4 или (если восстанавливаем из архива) pip install -r requirements.txt  
+pip install Django или  pip install -U django==8.0.4 
 
-pip list
 
-django-admin startproject project01 ../project01
+django-admin startproject fio_project ./
+
 
 ls -laF
 
 pip freeze > requirements.txt
 
-ls -laF
+pip install -r requirements.txt 
 
 python manage.py runserver или (если уникальный ip)  python manage.py runserver 10.0.2.15:8000
 
 Ctrl + C
 
-редактируем project01/settings.py
-
-ALLOWED_HOSTS = ["*"],
-
-python manage.py runserver 127.0.0.1:80
-
 deactivate
 
-#### Разворачиваем из архива 
+Ctrl + C
 
-cd project01
+#### Разворачиваем из архива 
 
 python3 -m venv .venv
 
 . .venv/bin/activate
-
-pip install --upgrade pip
 
 pip list
 
 pip install -r requirements.txt
 
 python manage.py runserver
+
+
+## Полезно для всех
+
+редактируем /settings.py
+
+ALLOWED_HOSTS = ["*"],
 
 
 
@@ -201,12 +178,7 @@ git pull origin main
 
 
 
-
-
 ### Редирект порта для сервера
-iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8000
 
-### Готовим новую конфигурацию 
-
-pip freeze > requirements.txt
+sudo iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080
 
