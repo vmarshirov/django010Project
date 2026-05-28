@@ -152,7 +152,8 @@ ALLOWED_HOSTS = ["*"],
 
 ### При необходимости когда начнем работать с моделями
  
-python manage.py mikemigrations
+
+python manage.py makemigrations
 
 python manage.py migrate
 
